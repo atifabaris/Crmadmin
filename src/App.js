@@ -91,6 +91,14 @@ import CreateReport from "./pages/CreateReport/Index";
 import CreateProperty from "./pages/CreateProperty";
 import Building from "./pages/Bulid";
 import CreateBuilding from "./pages/CreateBuilding";
+import ViewAgent from "./pages/viewAgent";
+import CreateAgent from "./pages/createAgent";
+import { ViewBrokers } from "./pages/viewBrokers";
+import CreateBrokers from "./pages/createBrokers";
+import ThirdPartyApps from "./pages/thirdPartyApps";
+import GoogleTab from "./components/thirdPartyAppsFile/googelTab/GoogleTab";
+import { TrackerSettings } from "./pages/trackerSettings";
+import PlanDetails from "./pages/planDetails";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -267,13 +275,23 @@ function App() {
               <Route path="newbuilding" element={<CreateBuilding />} />
                  
 
+               {/* -----------------meraj Route Start-------- */} 
+              <Route path="view-agent" element={<ViewAgent />} />
+              <Route path="create-agent" element={<CreateAgent />} />
+              <Route path="view-brokers" element={<ViewBrokers />} />
+              <Route path="create-brokers" element={<CreateBrokers />} />
+              
+              {/* setting */}
+              <Route path="third-party-apps" element={<ThirdPartyApps />} />
+              <Route path="tracker-settings" element={<TrackerSettings />} />
+              <Route path="plan-details" element={<PlanDetails />} />
+
+               {/* -----------------meraj Route End-------- */}  
 
 
-              {/* ...............Account..................... */}
-              <Route path="fashiondeshboard" element={<FashionDeshboard />} />  
 
-
-
+               {/* ...............Account..................... */}
+               <Route path="fashiondeshboard" element={<FashionDeshboard />} />
 
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
