@@ -91,6 +91,15 @@ import CreateReport from "./pages/CreateReport/Index";
 import CreateProperty from "./pages/CreateProperty";
 import Building from "./pages/Bulid";
 import CreateBuilding from "./pages/CreateBuilding";
+import List from "./pages/kamran/List";
+import LegalCase from "./pages/kamran/LegalCase";
+import UnitRes from "./pages/kamran/UnitRes";
+import UnitForm from "./common/kamran/UnitForm";
+import TransferBooking from "./pages/kamran/TransferBooking";
+import NewBooking from "./pages/kamran/NewBooking";
+import BookingCancel from "./pages/kamran/BookingCancel";
+import FormCancel from "./pages/kamran/FormCancel";
+import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
 
@@ -281,7 +290,17 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
 
               
-              <Route path="*" element={<PageNotFound />} />
+            
+              {/*------------Kamran-----------*/}
+              <Route path="list" element={<List />} />
+              <Route path="legalcase" element={<LegalCase />} />
+              <Route path="unitres" element={<UnitRes />} />
+              <Route path= "unitform" element={<UnitForm/>} />
+              <Route path= "transferbooking" element={<TransferBooking/>} />
+              <Route path= "newbooking" element={<NewBooking/>} />
+              <Route path= "bookingcancel" element={<BookingCancel/>} />
+              <Route path= "formcancel" element={<FormCancel/>} />
+              <Route path= "coustumemodel" element={<CoustumeModel/>} />
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />
