@@ -91,6 +91,8 @@ import CreateReport from "./pages/CreateReport/Index";
 import CreateProperty from "./pages/CreateProperty";
 import Building from "./pages/Bulid";
 import CreateBuilding from "./pages/CreateBuilding";
+import { Tenant } from "./pages/adil/Tenant";
+import NewTenantform from "./pages/NewTenantform/NewTenant";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -278,7 +280,12 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
 
+              
               <Route path="*" element={<PageNotFound />} />
+             {/* Adil start here */ }
+             <Route path="tenant" element={<Tenant/>} />
+             <Route path="newTenant" element={<NewTenantform/>} />
+             
             </Route>
           </>
         )}
