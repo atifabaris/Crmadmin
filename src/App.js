@@ -100,6 +100,8 @@ import NewBooking from "./pages/kamran/NewBooking";
 import BookingCancel from "./pages/kamran/BookingCancel";
 import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
+import { Tenant } from "./pages/adil/Tenant";
+import NewTenantform from "./pages/NewTenantform/NewTenant";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -287,6 +289,7 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
 
+              
             
               {/*------------Kamran-----------*/}
               <Route path="list" element={<List />} />
@@ -298,6 +301,10 @@ function App() {
               <Route path= "bookingcancel" element={<BookingCancel/>} />
               <Route path= "formcancel" element={<FormCancel/>} />
               <Route path= "coustumemodel" element={<CoustumeModel/>} />
+             {/* Adil start here */ }
+             <Route path="tenant" element={<Tenant/>} />
+             <Route path="newTenant" element={<NewTenantform/>} />
+             
             </Route>
           </>
         )}
