@@ -16,7 +16,7 @@ export default function AlphabeticFilter(){
                     </div>
                     <div>
                         <ul className="d-flex gap-1">
-                            <li className=""><button className="btn m-0 btn-light p-1 fs-6 text-white">A</button></li>
+                            <li className=""><button className="btn m-0 btn-light p-1 fs-6">A</button></li>
                             <li className=""><button className="btn m-0 btn-light p-1 fs-6 text-white">B</button></li>
                             <li className=""><button className="btn m-0 btn-light p-1 fs-6 text-white">C</button></li>
                             <li className=""><button className="btn m-0 btn-light p-1 fs-6 text-white">D</button></li>

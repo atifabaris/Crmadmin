@@ -7,14 +7,14 @@ const TrackerSettingsForm = () => {
       <div className="row">
         <div className="col-12">
           <form>
-            <div className="d-flex justify-content-between">
-              <h4>Track Settings</h4>
-              <span>-</span>
+            <div className="d-flex align-items-center justify-content-between bg-black text-light py-2 px-4">
+              <h4 className="fs-4">Track Settings</h4>
+              <span className="fs-3">-</span>
             </div>
             <div className="px-5">
-              <div className="row">
+              <div className="row mt-3">
                 <div className="col-2">
-                  <label>Track Based On</label>
+                  <label className="fs-5">Track Based On</label>
                 </div>
                 <div className="col-2">
                   <div className="form-check">
@@ -26,7 +26,7 @@ const TrackerSettingsForm = () => {
                       checked
                     />
                     <label
-                      className="form-check-label"
+                      className="form-check-label fs-5"
                       htmlFor="flexRadioDefault2"
                     >
                       Track Timings
@@ -37,12 +37,12 @@ const TrackerSettingsForm = () => {
 
               <div className="row mt-3">
                 <div className="col-6">
-                  <div className="mb-3 d-flex align-items-center gap-2">
+                  <div className="mb-3">
                     <label
                       htmlFor="startTime"
-                      className="form-label text-nowrap"
+                      className="form-label text-nowrap fs-5"
                     >
-                      Start Time :
+                      Start Time
                     </label>
                     <CustomInputField
                       type="time"
@@ -52,9 +52,9 @@ const TrackerSettingsForm = () => {
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="mb-3 d-flex align-items-center gap-2">
-                    <label htmlFor="endTime" className="form-label text-nowrap">
-                      End Time :
+                  <div className="mb-3">
+                    <label htmlFor="endTime" className="form-label text-nowrap fs-5">
+                      End Time
                     </label>
                     <CustomInputField
                       type="time"
@@ -70,7 +70,7 @@ const TrackerSettingsForm = () => {
                       className="form-check-input"
                       id="exampleCheck1"
                     />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
+                    <label className="form-check-label fs-5" htmlFor="exampleCheck1">
                       Track locations within Attendance punch-in/punch-outs time
                       only
                     </label>
@@ -80,9 +80,9 @@ const TrackerSettingsForm = () => {
             </div>
 
             <div className="row">
-              <div className="d-flex justify-content-between">
-                <h4>Track Settings</h4>
-                <span>-</span>
+            <div className="d-flex align-items-center justify-content-between bg-black text-light py-2 px-4">
+                <h4 className="fs-4">Track Settings</h4>
+                <span className="fs-3">-</span>
               </div>
               <div className="col-12 px-5">
                 <div className="row ">
@@ -97,7 +97,7 @@ const TrackerSettingsForm = () => {
                         id="flexRadioDefault1"
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label fs-5"
                         htmlFor="flexRadioDefault1"
                       >
                         Default radio
@@ -112,7 +112,7 @@ const TrackerSettingsForm = () => {
                         checked
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label fs-5"
                         htmlFor="flexRadioDefault2"
                       >
                         Default checked radio
@@ -132,7 +132,7 @@ const TrackerSettingsForm = () => {
                         checked
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label fs-5"
                         htmlFor="exampleRadios1"
                       >
                         Default radio
@@ -147,7 +147,7 @@ const TrackerSettingsForm = () => {
                         value="option2"
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label fs-5"
                         htmlFor="exampleRadios2"
                       >
                         Second default radio
@@ -162,7 +162,7 @@ const TrackerSettingsForm = () => {
                         value="option3"
                       />
                       <label
-                        className="form-check-label"
+                        className="form-check-label fs-5"
                         htmlFor="exampleRadios3"
                       >
                         Disabled radio
@@ -180,7 +180,7 @@ const TrackerSettingsForm = () => {
                         id="inlineCheckbox1"
                         value="option1"
                       />
-                      <label className="form-check-label" for="inlineCheckbox1">
+                      <label className="form-check-label fs-5" for="inlineCheckbox1">
                         Automatically apply customer address change in Route
                         Plan
                       </label>
@@ -194,7 +194,7 @@ const TrackerSettingsForm = () => {
                         id="inlineCheckbox2"
                         value="option2"
                       />
-                      <label className="form-check-label" for="inlineCheckbox2">
+                      <label className="form-check-label fs-5" for="inlineCheckbox2">
                         Show Route plan as per the definition
                       </label>
                     </div>
@@ -202,10 +202,10 @@ const TrackerSettingsForm = () => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-3">
-                  <button type="button" className="btn btn-primary">
+                  <button type="button" className="btn btn-primary fs-5">
                     Save
                   </button>
-                  <button type="button" className="btn btn-primary">
+                  <button type="button" className="btn btn-primary fs-5">
                     Cencel
                   </button>
                 </div>

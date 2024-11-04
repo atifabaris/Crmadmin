@@ -1,13 +1,13 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import "./assets/css/style.css";
-import "./components/upgrade-member/member.css"
+import "./components/upgrade-member/member.css";
 import "react-toastify/dist/ReactToastify.css";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/style.css";
 import "./common/CustomInputField/index.module.scss";
-import "./assets/css/project.css"
+import "./assets/css/project.css";
 
 import DasBoardRight from "./pages/dasBoardRight/DasBoardRight";
 import BankMasterP from "./pages/topNavigationPages/Master/bankMaster";
@@ -25,7 +25,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import ZoonArea from "./pages/zoonArea";
 import ForgotPassword from "./components/forgotPassword/ForgotPassword";
 import LoginPasswordReset from "./pages/paswordResetPages";
-import { getToken } from 'firebase/messaging';
+import { getToken } from "firebase/messaging";
 import { messaging } from "./firebase/fireBase";
 import { sendNotification } from "./api/login/Login";
 import PageNotFound from "./common/pageNotFound/PageNotFound";
@@ -110,6 +110,13 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
+import PlanDetailUpgrade from "./pages/planDetailUpgrade";
+import DataManagement from "./pages/dataManagement";
+import CompanySetting from "./pages/companySetting";
+import CompanyInformation from "./components/companySettingsMain/companySettingListCom/companyInformation/CompanyInformation";
+import FiscalYear from "./components/companySettingsMain/companySettingListCom/fiscalYear/FiscalYear";
+import EditFiscalYear from "./components/companySettingsMain/companySettingListCom/fiscalYear/editFiscalYear/EditFiscalYear";
+import NewFiscalYear from "./components/companySettingsMain/companySettingListCom/fiscalYear/newFiscalYear/NewFiscalYear";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -117,11 +124,11 @@ function App() {
   const { isLogin } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
 
   useEffect(() => {
     // console.log(getToken());
-    requestPermissions()
+    requestPermissions();
     if (getToken2()) {
       dispatch(setIsLogin({ isLogin: true }));
       navigate(location?.pathname);
@@ -130,48 +137,42 @@ function App() {
 
   useEffect(() => {
     setIsAuthenticated(isLogin);
-
   }, [isLogin]);
-
-
-
 
   const [tokenNoti, setokenNoti] = useState(null);
 
   const sendNotification2 = async (token) => {
     try {
-      let result = await sendNotification({ type: 'Browser', token: token });
-
-    } catch (error) {
-
-    }
+      let result = await sendNotification({ type: "Browser", token: token });
+    } catch (error) {}
   };
 
   async function requestPermissions() {
-
-
     Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        getToken(messaging, { vapidKey: 'BPmnN4enu6SLX6ASW7dctK6Q0j3GnTUhL5ZRi16I6RDqGav4khN2JIHmdKcL4eTqwRBu-PWmaUa1G-Oaor7AcF4' }).then((currentToken) => {
-          if (currentToken) {
-            console.log('Got FCM device token:', currentToken);
-            setokenNoti(currentToken)
-            if (isLogin) {
-              sendNotification2(currentToken)
-
+      if (permission === "granted") {
+        getToken(messaging, {
+          vapidKey:
+            "BPmnN4enu6SLX6ASW7dctK6Q0j3GnTUhL5ZRi16I6RDqGav4khN2JIHmdKcL4eTqwRBu-PWmaUa1G-Oaor7AcF4",
+        })
+          .then((currentToken) => {
+            if (currentToken) {
+              console.log("Got FCM device token:", currentToken);
+              setokenNoti(currentToken);
+              if (isLogin) {
+                sendNotification2(currentToken);
+              }
+              // Send the token to your server or display it on the UI
+            } else {
+              console.log(
+                "No registration token available. Request permission to generate one."
+              );
             }
-            // Send the token to your server or display it on the UI
-          } else {
-            console.log('No registration token available. Request permission to generate one.');
-          }
-        }).catch((err) => {
-          console.log('An error occurred while retrieving token. ', err);
-        });
+          })
+          .catch((err) => {
+            console.log("An error occurred while retrieving token. ", err);
+          });
       }
-    })
-
-
-
+    });
   }
 
   return (
@@ -204,8 +205,6 @@ function App() {
                 element={<AddRoleMaster />}
               />
 
-             
-
               <Route path="contest" element={<ContestMaster />} />
               <Route path="create-contest" element={<CreateContext />} />
               <Route path="create-contest/:id" element={<CreateContext />} />
@@ -216,113 +215,132 @@ function App() {
 
               <Route path="market-type" element={<MarketTypeMaster />} />
               <Route path="create-market-type" element={<CreateTypemarket />} />
-              <Route path="create-market-type/:id" element={<CreateTypemarket />} />
+              <Route
+                path="create-market-type/:id"
+                element={<CreateTypemarket />}
+              />
 
               <Route path="banner-master" element={<BannerMaster />} />
               <Route path="create-banner" element={<CreateBanner />} />
               <Route path="create-banner/:id" element={<CreateBanner />} />
 
-
               {/* .........................project.......................... */}
               <Route path=" " element={<Project />} />
               <Route path="project/newproject" element={<NewProject />} />
-
 
               {/* .............................task............................ */}
               <Route path="task" element={<Task />} />
               <Route path="view" element={<View />} />
 
-
               {/* .............................order.................................. */}
-              <Route path="orderlist" element={<OrderList/>} />
-              <Route path="addneworder" element={<AddNewOrder/>} />
-              <Route path="bookinglist" element={<BookingList/>} />
-              <Route path="addnewbooking" element={<AddNewBooking/>} />
+              <Route path="orderlist" element={<OrderList />} />
+              <Route path="addneworder" element={<AddNewOrder />} />
+              <Route path="bookinglist" element={<BookingList />} />
+              <Route path="addnewbooking" element={<AddNewBooking />} />
 
               <Route path="budgetlist" element={<Budget />} />
               <Route path="addnewbudget" element={<AddNewBudget />} />
               <Route path="costinglist" element={<Costing />} />
               <Route path="costingform" element={<CostingForm />} />
               <Route path="samplelist" element={<SimpleList />} />
-              <Route path="addnewsample" element={<AddNewSimple />} />  
-              <Route path="shipment" element={<ShipmentList />} />  
-              <Route path="newshipment" element={<AddNewShipment />} />  
-              <Route path="productlist" element={<ProductList />} />  
-              <Route path="dailyproduction" element={<DailyProduction />} />  
+              <Route path="addnewsample" element={<AddNewSimple />} />
+              <Route path="shipment" element={<ShipmentList />} />
+              <Route path="newshipment" element={<AddNewShipment />} />
+              <Route path="productlist" element={<ProductList />} />
+              <Route path="dailyproduction" element={<DailyProduction />} />
 
-              <Route path="rems-status" element={<REMSstatus />} />  
-              <Route path="editpms" element={<EditPMSenquary />} />  
-              <Route path="editbooking" element={<Editbooking />} />  
-              <Route path="reportdate" element={<ReportData />} />  
-              <Route path="bookingstatus" element={<BookingStatus />} />  
-              <Route path="property" element={<PropertyHome />} />  
-              <Route path="newproperty" element={<CreateProperty />} />  
-              <Route path="compaigs" element={<Compaigs />} />  
-              <Route path="newcompaigs" element={<NEwCampaigs />} />  
-              <Route path="bookingsnap" element={<BookingSnap />} />  
-              <Route path="ventures" element={<Ventures />} />  
+              <Route path="rems-status" element={<REMSstatus />} />
+              <Route path="editpms" element={<EditPMSenquary />} />
+              <Route path="editbooking" element={<Editbooking />} />
+              <Route path="reportdate" element={<ReportData />} />
+              <Route path="bookingstatus" element={<BookingStatus />} />
+              <Route path="property" element={<PropertyHome />} />
+              <Route path="newproperty" element={<CreateProperty />} />
+              <Route path="compaigs" element={<Compaigs />} />
+              <Route path="newcompaigs" element={<NEwCampaigs />} />
+              <Route path="bookingsnap" element={<BookingSnap />} />
+              <Route path="ventures" element={<Ventures />} />
               <Route path="newventures" element={<Newventures />} />
               <Route path="floor" element={<Floor />} />
               <Route path="newfloor" element={<NewFloor />} />
               <Route path="block" element={<Block />} />
               <Route path="newblock" element={<NewBlock />} />
 
-
               <Route path="propertycharges" element={<PropertyCharges />} />
-              <Route path="newpropertycharges" element={<CreatePropertyCharges />} />
+              <Route
+                path="newpropertycharges"
+                element={<CreatePropertyCharges />}
+              />
               <Route path="propertyshowing" element={<PropertyShowing />} />
-              <Route path="newpropertyshowing" element={<CreatePropertyShowing />} />
+              <Route
+                path="newpropertyshowing"
+                element={<CreatePropertyShowing />}
+              />
               <Route path="propertyunit" element={<PropertyUnit />} />
               <Route path="newpropertyunit" element={<CreatePropertyunit />} />
               <Route path="propertystages" element={<PropertyStages />} />
-              <Route path="newpropertystages" element={<CreatePropertyStages />} />
-              <Route path="propertystagesplane" element={<PropertyStagePlane />} />
-              <Route path="newpropertystagesplane" element={<CreateStageplan />} />
-              
+              <Route
+                path="newpropertystages"
+                element={<CreatePropertyStages />}
+              />
+              <Route
+                path="propertystagesplane"
+                element={<PropertyStagePlane />}
+              />
+              <Route
+                path="newpropertystagesplane"
+                element={<CreateStageplan />}
+              />
+
               <Route path="propertydetail" element={<PropertyDetail />} />
               <Route path="reporthome" element={<ReportHome />} />
               <Route path="newreport" element={<CreateReport />} />
               <Route path="building" element={<Building />} />
               <Route path="newbuilding" element={<CreateBuilding />} />
-                 
 
-               {/* -----------------meraj Route Start-------- */} 
-              <Route path="view-agent" element={<ViewAgent />} />
-              <Route path="create-agent" element={<CreateAgent />} />
-              <Route path="view-brokers" element={<ViewBrokers />} />
-              <Route path="create-brokers" element={<CreateBrokers />} />
-              
-              {/* setting */}
-              <Route path="third-party-apps" element={<ThirdPartyApps />} />
-              <Route path="tracker-settings" element={<TrackerSettings />} />
-              <Route path="plan-details" element={<PlanDetails />} />
-
-               {/* -----------------meraj Route End-------- */}  
-
-
-
-               {/* ...............Account..................... */}
-               <Route path="fashiondeshboard" element={<FashionDeshboard />} />
-
-              {/* -----------------junaid"s Route Start End-w-------- */}
-              {/* -----------------junaid"s Route Start End-w-------- */}
-
-              
-            
               {/*------------Kamran-----------*/}
               <Route path="list" element={<List />} />
               <Route path="legalcase" element={<LegalCase />} />
               <Route path="unitres" element={<UnitRes />} />
-              <Route path= "unitform" element={<UnitForm/>} />
-              <Route path= "transferbooking" element={<TransferBooking/>} />
-              <Route path= "newbooking" element={<NewBooking/>} />
-              <Route path= "bookingcancel" element={<BookingCancel/>} />
-              <Route path= "formcancel" element={<FormCancel/>} />
-              <Route path= "coustumemodel" element={<CoustumeModel/>} />
-             {/* Adil start here */ }
-             <Route path="tenant" element={<Tenant/>} />
-             <Route path="newTenant" element={<NewTenantform/>} />
-             
+              <Route path="unitform" element={<UnitForm />} />
+              <Route path="transferbooking" element={<TransferBooking />} />
+              <Route path="newbooking" element={<NewBooking />} />
+              <Route path="bookingcancel" element={<BookingCancel />} />
+              <Route path="formcancel" element={<FormCancel />} />
+              <Route path="coustumemodel" element={<CoustumeModel />} />
+
+              {/* ...............Account..................... */}
+              <Route path="fashiondeshboard" element={<FashionDeshboard />} />
+
+              {/* -----------------junaid"s Route Start End-w-------- */}
+              {/* -----------------junaid"s Route Start End-w-------- */}
+
+              {/* -----------------meraj Route Start-------- */}
+              <Route path="view-agent" element={<ViewAgent />} />
+              <Route path="create-agent" element={<CreateAgent />} />
+              <Route path="view-brokers" element={<ViewBrokers />} />
+              <Route path="create-brokers" element={<CreateBrokers />} />
+              {/* setting */}
+              <Route path="third-party-apps" element={<ThirdPartyApps />} />
+              <Route path="tracker-settings" element={<TrackerSettings />} />
+              <Route path="plan-details" element={<PlanDetails />} />
+              <Route mpath="plan-details-upgrade" element={<PlanDetailUpgrade />}/>
+              <Route path="data-management" element={<DataManagement />} />
+
+              {/* Advanced Settings */}
+              <Route path="company-setting" element={<CompanySetting />} />
+              <Route path="company-information" element={<CompanyInformation />} />
+              <Route path="fiscal-year" element={<FiscalYear />} />
+              <Route path="edit-fiscal-year" element={<EditFiscalYear />} />
+              <Route path="new-fiscal-year" element={<NewFiscalYear />} />
+
+
+              {/* -----------------meraj Route End-------- */}
+
+
+              {/* Adil start here */}
+              <Route path="tenant" element={<Tenant />} />
+              <Route path="newTenant" element={<NewTenantform />} />
             </Route>
           </>
         )}
