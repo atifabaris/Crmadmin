@@ -74,8 +74,14 @@ function Aside({ showAsideBar }) {
   }
 
   const mainMenu = [
-      {uniqueId: 9999999, id: 1, title: "project",
-        subMenu : [{title : "project", id: "9999", uniqueId: "9999", path: "project"}]
+      {uniqueId: 1, id: 1, title: "project",
+        subMenu : [{title : "project", id: "11", uniqueId: "11", path: "project"}]
+      },
+      {uniqueId: 2, id: 2, title: "Company Setting",
+        subMenu : [
+            {title : "Company Information", id: "22", uniqueId: "22", path: "company-information"},
+            {title : "Fiscal Year", id: "222", uniqueId: "222", path: "fiscal-year"}
+          ]
       },
   ]
 
