@@ -102,6 +102,19 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
+import ModuleDetails from "./pages/kamran/ModuleDetails";
+import ChangeTabs from "./pages/kamran/ChangeTabs";
+import AccessM from "./pages/kamran/AccessM";
+import ChangeDisplay from "./pages/kamran/ChangeDisplay";
+import NewSharning from "./pages/kamran/NewSharning";
+import CalenderSharning from "./pages/kamran/CalenderSharning";
+import AddMembers from "./pages/kamran/AddMembers";
+import Reminder from "./pages/kamran/Reminder";
+import ReminderList from "./pages/kamran/ReminderList";
+import AppRegistration from "./pages/kamran/AppRegistration";
+import DataPolicy from "./pages/kamran/DataPolicy";
+import OutLooking from "./pages/kamran/OutLooking";
+import SocialApp from "./pages/kamran/SocialApp";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -301,6 +314,19 @@ function App() {
               <Route path= "bookingcancel" element={<BookingCancel/>} />
               <Route path= "formcancel" element={<FormCancel/>} />
               <Route path= "coustumemodel" element={<CoustumeModel/>} />
+              <Route path= "moduledetails" element={<ModuleDetails/>} />
+              <Route path= "changetabs" element={<ChangeTabs/>} />
+              <Route path= "accessm" element={<AccessM/>} />
+              <Route path= "changedisplay" element={<ChangeDisplay/>} />
+              <Route path= "newsharning" element={<NewSharning/>} />
+              <Route path= "calendersharning" element={<CalenderSharning/>} />
+              <Route path= "addmembers" element={<AddMembers/>} />
+              <Route path= "reminder" element={<Reminder/>} />
+              <Route path= "reminderlist" element={<ReminderList/>} />
+              <Route path= "outlooking" element={<OutLooking/>} />
+              <Route path= "socialapp" element={<SocialApp/>} />
+             {/* <Route path= "appregistration" element={<AppRegistration/>} />
+              <Route path= "datapolicy" element={<DataPolicy/>} />*/}
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />

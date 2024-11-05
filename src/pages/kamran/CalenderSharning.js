@@ -1,17 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { RiEditBoxFill } from "react-icons/ri";
-function CoustumeModel() {
+function CalenderSharning() {
   return (
-    <div className='card'style={{marginTop: "10px", marginLeft: "4px", marginRight: "4px"}}>
-        <div className='table-responsive active-projects style-1' >
-            <h3 className='tbl-caption text-light'>Custom Module Added 
-            <Link className="btn btn-primary btn-sm" to="/moduledetails" role="button" aria-controls="offcanvasExample">+ Module Added</Link></h3>
-                                        {/* <button type="button" className="btn btn-secondary btn-sm" >
-                                        + Invite Employee
+    <div className='card'>
+        <div className='table-responsive active-projects style-1'>
+            <h2 className='tbl-caption text-light'> Calender Sharning
+            <Link className="btn btn-primary btn-sm"  to="/newsharning" role="button" aria-controls="offcanvasExample">
+            + Calender Sharning Added</Link></h2>
+     {/* <button type="button" className="btn btn-secondary btn-sm" > + Invite Employee
                                     </button> */}
-        </div>
-        <div className="mt-3">
+</div>
+<div className="mt-3">
                 <table className="w-100">
                     <tr className="p-1 bg-light">
                         <th className="p-1">
@@ -52,9 +51,8 @@ function CoustumeModel() {
                 </table>
             </div>
     
-        </div>
-    
+    </div>
   )
 }
 
-export default CoustumeModel
+export default CalenderSharning
