@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getCreVenture } from "../../api/login/Login";
 
 export default function CheckBooking(){
+    const [venture, setventure] = useState(null)
+
+    const DataStore = async()=>{
+        try{
+            const ven = await getCreVenture
+            setventure(ven?.data.venture)
+        }catch(erroe){
+            console.error("error")
+        }
+    } 
+    useEffect(()=>{
+        DataStore()
+    })
     return(
         <div className="p-2 bg-light align-items-end gap-1 d-flex">
             <ul className="d-flex align-items-end gap-1">
@@ -8,6 +22,9 @@ export default function CheckBooking(){
                     <label className="fs-6 m-0 d-block text-center">Ventures</label>
                     <select className="rounded-0 fs-6 border border-light">
                         <option >American to</option>
+                        {venture && venture.map((item, i)=>
+                            <opion key={i}>{item.ti}</opion>
+                        )} 
                     </select>
                 </li>
                 <li className="">

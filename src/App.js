@@ -252,49 +252,43 @@ function App() {
               <Route path="productlist" element={<ProductList />} />
               <Route path="dailyproduction" element={<DailyProduction />} />
 
-              <Route path="rems-status" element={<REMSstatus />} />
-              <Route path="editpms" element={<EditPMSenquary />} />
-              <Route path="editbooking" element={<Editbooking />} />
-              <Route path="reportdate" element={<ReportData />} />
-              <Route path="bookingstatus" element={<BookingStatus />} />
-              <Route path="property" element={<PropertyHome />} />
-              <Route path="newproperty" element={<CreateProperty />} />
-              <Route path="compaigs" element={<Compaigs />} />
-              <Route path="newcompaigs" element={<NEwCampaigs />} />
-              <Route path="bookingsnap" element={<BookingSnap />} />
-              <Route path="ventures" element={<Ventures />} />
+              <Route path="rems-status" element={<REMSstatus />} />  
+              <Route path="editpms" element={<EditPMSenquary />} />  
+              <Route path="editbooking" element={<Editbooking />} />  
+              <Route path="reportdate" element={<ReportData />} />  
+              <Route path="bookingstatus" element={<BookingStatus />} />  
+              <Route path="property" element={<PropertyHome />} />  
+              <Route path="newproperty" element={<CreateProperty />} />  
+              <Route path="newproperty/:id" element={<CreateProperty />} />  
+              <Route path="campaings" element={<Compaigs />} />  
+              <Route path="newcompaigs" element={<NEwCampaigs />} />  
+              <Route path="bookingsnap" element={<BookingSnap />} />  
+              <Route path="ventures" element={<Ventures />} />  
               <Route path="newventures" element={<Newventures />} />
+              <Route path="newventures/:id" element={<Newventures />} />
               <Route path="floor" element={<Floor />} />
-              <Route path="newfloor" element={<NewFloor />} />
+              <Route path="newfloor" element={<NewFloor />} /> 
               <Route path="block" element={<Block />} />
               <Route path="newblock" element={<NewBlock />} />
+              <Route path="newblock/:id" element={<NewBlock />} />
+
 
               <Route path="propertycharges" element={<PropertyCharges />} />
-              <Route
-                path="newpropertycharges"
-                element={<CreatePropertyCharges />}
-              />
+              <Route path="newpropertycharges" element={<CreatePropertyCharges />} />
+              <Route path="newpropertycharges/:id" element={<CreatePropertyCharges />} />
               <Route path="propertyshowing" element={<PropertyShowing />} />
-              <Route
-                path="newpropertyshowing"
-                element={<CreatePropertyShowing />}
-              />
+              <Route path="newpropertyshowing" element={<CreatePropertyShowing />} />
+              <Route path="newpropertyshowing/:id" element={<CreatePropertyShowing />} />
               <Route path="propertyunit" element={<PropertyUnit />} />
               <Route path="newpropertyunit" element={<CreatePropertyunit />} />
+              <Route path="newpropertyunit/:id" element={<CreatePropertyunit />} />
               <Route path="propertystages" element={<PropertyStages />} />
-              <Route
-                path="newpropertystages"
-                element={<CreatePropertyStages />}
-              />
-              <Route
-                path="propertystagesplane"
-                element={<PropertyStagePlane />}
-              />
-              <Route
-                path="newpropertystagesplane"
-                element={<CreateStageplan />}
-              />
-
+              <Route path="newpropertystages" element={<CreatePropertyStages />} />
+              <Route path="newpropertystages/:id" element={<CreatePropertyStages />} />
+              <Route path="propertystagesplane" element={<PropertyStagePlane />} />
+              <Route path="newpropertystagesplane" element={<CreateStageplan />} />
+              <Route path="newpropertystagesplane/:id" element={<CreateStageplan />} />
+              
               <Route path="propertydetail" element={<PropertyDetail />} />
               <Route path="reporthome" element={<ReportHome />} />
               <Route path="newreport" element={<CreateReport />} />
@@ -310,6 +304,7 @@ function App() {
               <Route path="newbooking" element={<NewBooking />} />
               <Route path="bookingcancel" element={<BookingCancel />} />
               <Route path="formcancel" element={<FormCancel />} />
+              <Route path="coustumemodel" element={<CoustumeModel />} />
               <Route path="coustumemodel" element={<CoustumeModel />} />
 
               {/* ...............Account..................... */}

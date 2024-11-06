@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import CustomInputField from "../../common/CustomInputField";
-import { getCreblock, getCreFloor, getCreOpportunityUnit, getCreProperty, getCreUnit, getCreVenture, postNewpropertyShowing, } from "../../api/login/Login";
+import { getCreblock, getCreFloor, getCreOpportunityUnit, getCreProperty, getCreUnit, getCreVenture, getProperyShowingId, postNewpropertyShowing, propertyShowingUpdate, } from "../../api/login/Login";
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from "react-router-dom";
 
 export default function PropertyShowingForm(){
     const [venture , setVentre] = useState(null)
@@ -9,6 +10,7 @@ export default function PropertyShowingForm(){
     const [block, setBlock] = useState(null)
     const [floor, setFloor] = useState(null)
     const [unit, setUnit] = useState(null)
+    const params = useParams
     const [opportunity, setOpportunity] = useState(null)
     const [store, setStore]=useState({
     name: "",
@@ -47,6 +49,37 @@ export default function PropertyShowingForm(){
     useEffect(()=>{
         storeData()
     })
+    useEffect(() => {
+        const fetchCurrency = async () => {
+            try {
+                if (params?.id) {
+                    const response = await getProperyShowingId(params.id);
+                    const currencyData = response.data;
+                    setStore(currencyData);
+                } else {
+                    setStore({
+                        name: "",
+                        owner: "",
+                        account_name: "", 
+                        date: "",
+                        mobile_no: "",
+                        opportunity: "", 
+                        lead_type: "",
+                        lead_ref: "",
+                        venture: "",
+                        property: "",
+                        block: "",
+                        floor: "",
+                        unit: "",
+                        });
+                }
+            } catch (error) {
+
+            }
+        }
+        fetchCurrency()
+    }, [params.id])
+
     const handleChange = (e)=>{
         const {name , value} = e.target
         const clone = {...store}
@@ -55,16 +88,36 @@ export default function PropertyShowingForm(){
     }
 
     const Submit = async()=>{
-        try{
-            const res = await postNewpropertyShowing(store)
-            if (res?.statusCode == 200) {
-                toastSuccessMessage("success")
-            }
-            else {
-                    toasterrorMessage("Fai0-l")
+        // try{
+        //     const res = await postNewpropertyShowing(store)
+        //     if (res?.statusCode == 200) {
+        //         toastSuccessMessage("success")
+        //     }
+        //     else {
+        //             toasterrorMessage("Fai0-l")
+        //         }
+        // }catch(error){
+        //     console.log(error.massage)
+        // }
+        if(!params.id){
+            try{
+                    const res = await postNewpropertyShowing(store)
+                    if (res?.statusCode == 200) {
+                        toastSuccessMessage("success")
+                    }
+                    else {
+                            toasterrorMessage("Fai0-l")
+                        }
+                }catch(error){
+                    console.log(error.massage)
                 }
-        }catch(error){
-            console.log(error.massage)
+        }else{
+            const pt = await propertyShowingUpdate(params.id, store)
+            if(pt.statusCode == 200){
+                toastSuccessMessage("success")
+            }else{
+                toasterrorMessage("error")
+            }
         }
     }
 
@@ -262,7 +315,7 @@ export default function PropertyShowingForm(){
                                 </div>
                             </div>
                             <div className="mt-2 col-12">
-                                <button className="btn m-0 btn-primary" onClick={Submit}>Submit</button>
+                                <button className="btn m-0 btn-primary" type="button" onClick={Submit}>Submit</button>
                             </div>
                     </div>
                 </div>
