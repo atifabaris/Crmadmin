@@ -93,6 +93,9 @@ import Building from "./pages/Bulid";
 import CreateBuilding from "./pages/CreateBuilding";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
+import SelfService from "./pages/selfService";
+import UserManagement from "./pages/userManagement";
+import AlphabeticFilter from "./components/rems-status/AlphabeticFilter";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -282,10 +285,13 @@ function App() {
 
               
               <Route path="*" element={<PageNotFound />} />
+
+              
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />
-             
+             <Route path="selfService" element={<SelfService/>} />
+             <Route path="userManagement" element={<UserManagement/>} />
             </Route>
           </>
         )}
