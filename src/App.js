@@ -110,6 +110,16 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
+import AddMembers from "./pages/kamran/AddMembers";
+import CalenderSharning from "./pages/kamran/CalenderSharning";
+import ChangeDisplay from "./pages/kamran/ChangeDisplay";
+import ChangeTabs from "./pages/kamran/ChangeTabs";
+import ModuleDetails from "./pages/kamran/ModuleDetails";
+import NewSharning from "./pages/kamran/NewSharning";
+import OutLooking from "./pages/kamran/OutLooking";
+import Reminder from "./pages/kamran/Reminder";
+import ReminderList from "./pages/kamran/ReminderList";
+import SocialApp from "./pages/kamran/SocialApp";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -320,6 +330,16 @@ function App() {
               <Route path= "bookingcancel" element={<BookingCancel/>} />
               <Route path= "formcancel" element={<FormCancel/>} />
               <Route path= "coustumemodel" element={<CoustumeModel/>} />
+              <Route path= "addmembers" element={<AddMembers/>} />
+              <Route path= "calendersharning" element={<CalenderSharning/>} />
+              <Route path= "changedisplay" element={<ChangeDisplay/>} />
+              <Route path= "changetabs" element={<ChangeTabs/>} />
+              <Route path= "moduledetails" element={<ModuleDetails/>} />
+              <Route path= "newsharning" element={<NewSharning/>} />
+              <Route path= "outlooking" element={<OutLooking/>} />
+              <Route path= "reminder" element={<Reminder/>} />
+              <Route path= "reminder" element={<ReminderList/>} />
+              <Route path= "socialapp" element={<SocialApp/>} />
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />
