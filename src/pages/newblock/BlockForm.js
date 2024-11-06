@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import CustomInputField from "../../common/CustomInputField";
 import { CiSearch } from "react-icons/ci";
-import { clodinaryImage, getCreVenture, postNewBlock } from "../../api/login/Login";
+import { blockUpdate, clodinaryImage, getBlockId, getCreVenture, postNewBlock } from "../../api/login/Login";
 import { baseUrlImage } from "../../baseUrl";
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from "react-router-dom";
 
 
 
 export default function BlockForm(){
     const [venture, setVenture]= useState(null);
+    const params = useParams
     const [store, setStore] = useState({
         name: "",
         code: "",
@@ -34,6 +36,30 @@ export default function BlockForm(){
         getData()
     }, [])
 
+    useEffect(()=>{
+        const fetchCurrency = async()=>{
+            try{
+                if(params.id){
+                    const response = await getBlockId(params.id)
+                const currencyData = response.data;
+                setStore(currencyData);
+                }else{
+                    setStore({
+                        name: "",
+                        code: "",
+                        venture: "",
+                        property: "",
+                        rate: "",
+                        document: "",
+                        sequence: "",
+                    })
+                }
+            }catch(error){
+                console.error("error")
+            }
+        }
+        fetchCurrency()
+    }, [params.id])
     const handleChange = async (e) =>{
         const {name, value, type} = e.target
         if(type == "file"){
@@ -53,18 +79,45 @@ export default function BlockForm(){
         
     }
     const Submit = async () => {
-        try {
-            const res = await postNewBlock(store)
-            console.log(res)
-            if (res?.statusCode == 200) {
-                toastSuccessMessage("success")
+        // try {
+        //     const res = await postNewBlock(store)
+        //     console.log(res)
+        //     if (res?.statusCode == 200) {
+        //         toastSuccessMessage("success")
+        //     }
+        //     else {
+        //         toasterrorMessage("Fail")
+        //     }
+        // }
+        // catch (error) {
+        //     console.log(error.massage)
+        // }
+        if(!params){
+            try {
+                const res = await postNewBlock(store)
+                if (res?.statusCode == 200) {
+                    toastSuccessMessage("success")
+                }
+                else {
+                    toasterrorMessage("Fail")
+                }
             }
-            else {
-                toasterrorMessage("Fail")
+            catch (error) {
+                console.log(error.massage)
             }
-        }
-        catch (error) {
-            console.log(error.massage)
+        }else{
+            try {
+                const pt = await blockUpdate(params.id, store)
+                if (pt?.statusCode == 200) {
+                    toastSuccessMessage("success")
+                }
+                else {
+                    toasterrorMessage("Fail")
+                }
+            }
+            catch (error) {
+                console.log(error.massage)
+            }
         }
     }
 

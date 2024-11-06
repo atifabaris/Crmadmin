@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function PaymentShedule() {
-    return (
+export default function PaymentShedule({submit}) {
+    const [paymentType, setPaymentType] = useState('outrate'); 
+    const handleChecked = (type) => {
+        setPaymentType(type);
+    }
+    return ( 
         <div className="p-2">
             <h1 className="mt-2 fs-5 text-black">Payment Shedule</h1>
             <div className="row">
@@ -9,19 +13,19 @@ export default function PaymentShedule() {
                 <div className="col-10">
                     <ul className="d-flex mt-2">
                         <li className="p-2 d-flex rounded-0 gap-1 border bg-light border-Secondary">
-                            <input type="radio" name="n"/>
+                        <input type="radio" checked={paymentType === 'outrate'} name="payment" onChange={() => handleChecked('outrate')} />
                             <label className="m-0">Outrate</label>
                         </li>
                         <li className="p-2 rounded-0 d-flex gap-1 border bg-light border-Secondary">
-                            <input type="radio" name="n"/>
+                        <input type="radio" checked={paymentType === 'installment'} name="payment" onChange={() => handleChecked('installment')} />
                             <label className="m-0">Installment Plan</label>
                         </li>
                         <li className="p-2 rounded-0 d-flex gap-1 border bg-light border-Secondary">
-                            <input type="radio" name="n"/>
+                        <input type="radio" checked={paymentType === 'stagebased'} name="payment" onChange={() => handleChecked('stagebased')} />
                             <label className="m-0">Stagebassed</label>
                         </li>
                     </ul>
-                    <div className={`d-flex border justify-content-between  rounded-0 py-1 px-4`}>
+                    <div className={`${paymentType === "installment" ? "d-flex" : "d-none"} border justify-content-between  rounded-0 py-1 px-4`}>
                         <div className="d-flex fs-5 align-items-center gap-2">
                             <label>Interval</label>
                             <select className="border">
@@ -111,6 +115,9 @@ export default function PaymentShedule() {
                                 <td className="text-center border border-light"></td>
                             </tr>
                         </table> 
+                        </div>
+                        <div className="col-12">
+                            <button className="btn btn-primary mt-2 m-0" onClick={submit}>Submit</button>
                         </div>
                 </div>
             </div>

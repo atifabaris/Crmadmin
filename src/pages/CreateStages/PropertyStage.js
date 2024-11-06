@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import CustomInputField from "../../common/CustomInputField";
-import { getCreProperty, postNewpropertyStage} from "../../api/login/Login";
+import { getCreProperty, getPropertyStageId, postNewpropertyStage} from "../../api/login/Login";
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from "react-router-dom";
+import PropertyStagePlane from "../PropartyStageplan";
 
 export default function PropertyStage(){
     const [property, setProperty] = useState (null)
+    const params = useParams
     const [store, SetStore] = useState({
         name:"",
         code:"",
@@ -25,6 +28,30 @@ export default function PropertyStage(){
         storeData()
     })
 
+    
+    useEffect(() => {
+        const fetchCurrency = async () => {
+            try {
+                if (params?.id) {
+                    const response = await getPropertyStageId(params.id);
+                    const currencyData = response.data;
+                    SetStore(currencyData);
+                } else {
+                    SetStore({
+                        name:"",
+                        code:"",
+                        property:"",
+                        payment_percentage:"",
+                        is_active: true
+                    });
+                }
+            } catch (error) {
+
+            }
+        }
+        fetchCurrency()
+    }, [params.id])
+
     const handleChange = (e)=>{
         const {name ,  value} = e.target
         const clone = {...store}
@@ -32,16 +59,36 @@ export default function PropertyStage(){
         SetStore(clone)
     }
     const submit = async()=>{
-        try{
-            const res = await postNewpropertyStage(store)
-            if (res?.statusCode == 200) {
-                toastSuccessMessage("success")
-            }
-            else {
-                    toasterrorMessage("Fai0-l")
+        // try{
+        //     const res = await postNewpropertyStage(store)
+        //     if (res?.statusCode == 200) {
+        //         toastSuccessMessage("success")
+        //     }
+        //     else {
+        //             toasterrorMessage("Fai0-l")
+        //         }
+        // }catch(error){
+        //     console.log(error.massage)
+        // }
+        if(!params){
+            try{
+                const res = await postNewpropertyStage(store)
+                if (res?.statusCode == 200) {
+                    toastSuccessMessage("success")
                 }
-        }catch(error){
-            console.log(error.massage)
+                else {
+                        toasterrorMessage("Fai0-l")
+                    }
+            }catch(error){
+                console.log(error.massage)
+            }
+        }else{
+            const pt = await PropertyStagePlane(params.id, store)
+            if(pt?.statusCode == 200){
+                toastSuccessMessage("success")
+            }else{
+               toasterrorMessage("error") 
+            }
         }
     }
 
@@ -114,7 +161,7 @@ export default function PropertyStage(){
                             </div>
                         </div>
                         <div className="mt-2">
-                            <button className="btn m-0 btn-primary" onClick={submit}>Submit</button>
+                            <button className="btn m-0 btn-primary" type="button" onClick={submit}>Submit</button>
                         </div>
                     </div>
                 </div>

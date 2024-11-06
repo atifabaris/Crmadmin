@@ -2369,6 +2369,15 @@ export const  postNewVenture = (data) => {
     },
   });
 };
+// post a new Property unit
+export const  postNewPropertyunit = (data) => {
+  return axiosInstance.post(`/prop_property_unit/addType`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
 // POST a New Property
 export const postNewProperty = (data) => {
   return axiosInstance.post(`/prop_property/addType`, data, {
@@ -2411,6 +2420,24 @@ export const postNewpropertyStage = (data) => {
 //POST a new Property_showing
 export const postNewpropertyShowing = (data) => {
   return axiosInstance.post(`/prop_property_stage/addType`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bea rer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+//POST a New Property_Stage_Plane
+export const postNewpropertyStagePlane = (data) => {
+  return axiosInstance.post(`/prop_property_stage_plan/addType`, data, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bea rer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+// POST a new booking 
+export const postNewBooking = (data) => {
+  return axiosInstance.post(`/prop_booking/addType`, data, {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bea rer ${window.localStorage.getItem('userToken')}`,
@@ -2550,14 +2577,17 @@ export const geChatting = (userId, page = 0, count = 10) => {
     },
   });
 };
-export const getCreVenture = (page, count) =>{
+/* export const getCreVenture = (page, count) =>{
   return axiosInstance.get(`prop_venture/user?page=${page}&count=${count}`, {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
       Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
     },
   });
-};
+}; */
+export const getCreVenture = (page, count) => {
+  return axiosInstance.get(`${baseUrl}/prop_venture/user?page=${page}&count=${count}`);
+}
 
 
 // block
@@ -2570,7 +2600,34 @@ export const getCreblock = (page, count) =>{
     },
   });
 };
+// Property stage
+export const getCrePropertyStage = (page, count) =>{
+  return axiosInstance.get(`prop_property_stage/user?page=${page}&count=${count}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+// Property Stage Plane
+export const getCrePropertyStagePlane = (page, count) =>{
+  return axiosInstance.get(`prop_property_stage_plan/user?page=${page}&count=${count}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
 
+// property unit
+export const getCrePropertyUnit = (page, count) =>{
+  return axiosInstance.get(`prop_property_unit/user?page=${page}&count=${count}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
 // property        
 export const getCreProperty = (page, count) =>{
   return axiosInstance.get(`prop_property/user?page=${page}&count=${count}`, {
@@ -2608,7 +2665,130 @@ export const getCreOpportunityUnit = (page, count) =>{
     },
   });
 };
+// opportunity_Unit
+export const getCreBuilding = (page, count) =>{
+  return axiosInstance.get(`prop_building/user?${page}&count=${count}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+// property charges
+export const getCrePropertyChages = (page, count) =>{
+  return axiosInstance.get(`prop_property_charges/user?${page}&count=${count}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+// property Showing
+export const getCrePropertyShowing = (page, count) =>{
+  return axiosInstance.get(`prop_property_showing/user?${page}&count=${count}`, {
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${window.localStorage.getItem('userToken')}`,
+    },
+  });
+};
+//delete verture   list
+export const ventureDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_venture/delete_type/${id}`);
+};
+// delete Property stage list
+export const propertyStageDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_property_stage/delete_type/${id}`);
+};
+// delete Property stage Plane list
+export const propertyStagePlaneDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_property_stage_plan/delete_type/${id}`);
+};
+//delete property unit list
+export const propertyUnitDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_property_unit/delete_type/${id}`);
+};
 
+// delete block list
+export const blockDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_block/delete_type/${id}`);
+};
+
+// delete Property chages list
+export const propertycahgerDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_property_charges/delete_type/${id}`);
+};
+// delete property showing list
+export const propertyShowingDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_property_showing/delete_type/${id}`);
+};
+
+//delete property   list
+export const propertyDelte = (id) => {
+  return axiosInstance.delete(`${baseUrl}prop_property/delete_type/${id}`);
+};
+// edit venture list
+export const getVentureId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_venture/${id}`);
+};
+// edit property unit list 
+export const getPropertyUnitId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_property_unit/${id}`);
+};
+// edit property stage list 
+export const getPropertyStageId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_property_stage/${id}`);
+};
+// edit property stage plane 
+export const getPropertyStagePlaneId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_property_stage_plan/${id}`);
+};
+// edit block list 
+export const getBlockId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_block/${id}`);
+};
+
+// edit property lits
+export const getPropertyId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_property/${id}`);
+};
+// edit property chargeslits
+export const getProperychargeId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_property_charges/${id}`);
+};
+// edie property showing 
+export const getProperyShowingId = (id) => {
+  return axiosInstance.get(`${baseUrl}prop_property_showing/${id}`);
+};
+// put venture id
+export const ventureUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_venture/update_type/${id}`, value);
+};
+// put Property unit id 
+export const propertyUnitUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_property_unit/update_type/${id}`, value);
+};
+// put Property Stage id
+export const PropertyStageUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_property_stage/update_type/${id}`, value);
+};
+// put block id
+export const blockUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_block/update_type/${id}`, value);
+};
+
+// put property showing id
+export const propertyShowingUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_property_showing/update_type/${id}`, value);
+};
+// put propertychagesUpdate
+export const propertyUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_property_charges/update_type/${id}`, value);
+};
+// put property satge plane 
+export const propertystageplaneUpdate = (id, value) => {
+  return axiosInstance.put(`${baseUrl}prop_property_stage_plan/update_type/${id}`, value);
+};
 // Account Name
 export const accountNameListbyPagination = (page, count) => {
   return axiosInstance.get(`prop_property_showing/user?page=${page}&count=${count}`);
