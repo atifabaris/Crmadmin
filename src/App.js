@@ -110,13 +110,16 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
-import PlanDetailUpgrade from "./pages/planDetailUpgrade";
-import DataManagement from "./pages/dataManagement";
-import CompanySetting from "./pages/companySetting";
-import CompanyInformation from "./components/companySettingsMain/companySettingListCom/companyInformation/CompanyInformation";
-import FiscalYear from "./components/companySettingsMain/companySettingListCom/fiscalYear/FiscalYear";
-import EditFiscalYear from "./components/companySettingsMain/companySettingListCom/fiscalYear/editFiscalYear/EditFiscalYear";
-import NewFiscalYear from "./components/companySettingsMain/companySettingListCom/fiscalYear/newFiscalYear/NewFiscalYear";
+import AddMembers from "./pages/kamran/AddMembers";
+import CalenderSharning from "./pages/kamran/CalenderSharning";
+import ChangeDisplay from "./pages/kamran/ChangeDisplay";
+import ChangeTabs from "./pages/kamran/ChangeTabs";
+import ModuleDetails from "./pages/kamran/ModuleDetails";
+import NewSharning from "./pages/kamran/NewSharning";
+import OutLooking from "./pages/kamran/OutLooking";
+import Reminder from "./pages/kamran/Reminder";
+import ReminderList from "./pages/kamran/ReminderList";
+import SocialApp from "./pages/kamran/SocialApp";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -315,32 +318,32 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
 
-              {/* -----------------meraj Route Start-------- */}
-              <Route path="view-agent" element={<ViewAgent />} />
-              <Route path="create-agent" element={<CreateAgent />} />
-              <Route path="view-brokers" element={<ViewBrokers />} />
-              <Route path="create-brokers" element={<CreateBrokers />} />
-              {/* setting */}
-              <Route path="third-party-apps" element={<ThirdPartyApps />} />
-              <Route path="tracker-settings" element={<TrackerSettings />} />
-              <Route path="plan-details" element={<PlanDetails />} />
-              <Route mpath="plan-details-upgrade" element={<PlanDetailUpgrade />}/>
-              <Route path="data-management" element={<DataManagement />} />
-
-              {/* Advanced Settings */}
-              <Route path="company-setting" element={<CompanySetting />} />
-              <Route path="company-information" element={<CompanyInformation />} />
-              <Route path="fiscal-year" element={<FiscalYear />} />
-              <Route path="edit-fiscal-year" element={<EditFiscalYear />} />
-              <Route path="new-fiscal-year" element={<NewFiscalYear />} />
-
-
-              {/* -----------------meraj Route End-------- */}
-
-
-              {/* Adil start here */}
-              <Route path="tenant" element={<Tenant />} />
-              <Route path="newTenant" element={<NewTenantform />} />
+              
+            
+              {/*------------Kamran-----------*/}
+              <Route path="list" element={<List />} />
+              <Route path="legalcase" element={<LegalCase />} />
+              <Route path="unitres" element={<UnitRes />} />
+              <Route path= "unitform" element={<UnitForm/>} />
+              <Route path= "transferbooking" element={<TransferBooking/>} />
+              <Route path= "newbooking" element={<NewBooking/>} />
+              <Route path= "bookingcancel" element={<BookingCancel/>} />
+              <Route path= "formcancel" element={<FormCancel/>} />
+              <Route path= "coustumemodel" element={<CoustumeModel/>} />
+              <Route path= "addmembers" element={<AddMembers/>} />
+              <Route path= "calendersharning" element={<CalenderSharning/>} />
+              <Route path= "changedisplay" element={<ChangeDisplay/>} />
+              <Route path= "changetabs" element={<ChangeTabs/>} />
+              <Route path= "moduledetails" element={<ModuleDetails/>} />
+              <Route path= "newsharning" element={<NewSharning/>} />
+              <Route path= "outlooking" element={<OutLooking/>} />
+              <Route path= "reminder" element={<Reminder/>} />
+              <Route path= "reminder" element={<ReminderList/>} />
+              <Route path= "socialapp" element={<SocialApp/>} />
+             {/* Adil start here */ }
+             <Route path="tenant" element={<Tenant/>} />
+             <Route path="newTenant" element={<NewTenantform/>} />
+             
             </Route>
           </>
         )}
