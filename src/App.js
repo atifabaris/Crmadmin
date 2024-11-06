@@ -305,6 +305,7 @@ function App() {
               <Route path="bookingcancel" element={<BookingCancel />} />
               <Route path="formcancel" element={<FormCancel />} />
               <Route path="coustumemodel" element={<CoustumeModel />} />
+              <Route path="coustumemodel" element={<CoustumeModel />} />
 
               {/* ...............Account..................... */}
               <Route path="fashiondeshboard" element={<FashionDeshboard />} />
