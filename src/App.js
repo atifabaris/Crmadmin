@@ -120,6 +120,53 @@ import OutLooking from "./pages/kamran/OutLooking";
 import Reminder from "./pages/kamran/Reminder";
 import ReminderList from "./pages/kamran/ReminderList";
 import SocialApp from "./pages/kamran/SocialApp";
+import MyCurrentUser from "./pages/kamran/MyCurrentUser";
+import AccessM from "./pages/kamran/AccessM";
+import NewProfile from "./pages/kamran/NewProfile";
+import Market from "./pages/kamran/Market";
+import Sales from "./pages/kamran/Sales";
+import Master from "./pages/kamran/Master";
+import ECommerce from "./pages/kamran/ECommerce";
+import Leasing from "./pages/kamran/Leasing";
+import Role from "./pages/kamran/Role";
+import Desgination from "./pages/kamran/Desgination";
+import AccessManagment from "./pages/kamran/AccessManagment";
+import CurrentUser from "./pages/kamran/CurrentUser";
+import WorkFlow from "./pages/kamran/AdvanceSetting/WorkFlow";
+import WorkForm from "./pages/kamran/AdvanceSetting/WorkForm";
+import WorkLog from "./pages/kamran/AdvanceSetting/WorkLog";
+import WorkLogFRom from "./pages/kamran/AdvanceSetting/WorkLogFRom";
+import Costume from "./pages/kamran/AdvanceSetting/Costume";
+import CostumeForm from "./pages/kamran/AdvanceSetting/CostumeForm";
+import PaymentConfig from "./pages/kamran/AdvanceSetting/PaymentConfig";
+import NewPayment from "./pages/kamran/AdvanceSetting/NewPayment";
+import GlobalCasting from "./pages/kamran/AdvanceSetting/GlobalCasting";
+import GlobalForm from "./pages/kamran/AdvanceSetting/GlobalForm";
+import GlobalSetting from "./pages/kamran/AdvanceSetting/GlobalSetting";
+import GlobalSettingForm from "./pages/kamran/AdvanceSetting/GlobalSettingForm";
+import Pms from "./pages/kamran/AdvanceSetting/Pms";
+import GeneralPms from "./pages/kamran/AdvanceSetting/GeneralPms";
+import Erp from "./pages/kamran/AdvanceSetting/Erp";
+import FrequnceyTemplateList from "./pages/kamran/AdvanceSetting/FrequnceyTemplateList";
+import FrequnceyForm from "./pages/kamran/AdvanceSetting/FrequnceyForm";
+import Scheduling from "./pages/kamran/AdvanceSetting/Scheduling";
+import SchedulingForm from "./pages/kamran/AdvanceSetting/SchedulingForm";
+import ExternalList from "./pages/kamran/AdvanceSetting/ExternalList";
+import ExternalForm from "./pages/kamran/AdvanceSetting/ExternalForm";
+import ModuleStage from "./pages/kamran/AdvanceSetting/ModuleStage";
+import ModuleStageForm from "./pages/kamran/AdvanceSetting/ModuleStageForm";
+import StageForm from "./pages/kamran/AdvanceSetting/StageForm2";
+import Roter from "./pages/kamran/AdvanceSetting/Roter";
+import StageForm2 from "./pages/kamran/AdvanceSetting/StageForm2";
+import MobileConfig from "./pages/kamran/AdvanceSetting/MobileConfig";
+import NewConfigRoter from "./pages/kamran/AdvanceSetting/NewConfigRoter";
+import EmailSetting from "./pages/kamran/AdvanceSetting/EmailSetting";
+import MailAddress from "./pages/kamran/AdvanceSetting/MailAddress";
+import NewMailAddress from "./pages/kamran/AdvanceSetting/NewMailAddress";
+import EmailFooter from "./pages/kamran/AdvanceSetting/EmailFooter";
+import FooterForm from "./pages/kamran/AdvanceSetting/FooterForm";
+import WebAction from "./pages/kamran/AdvanceSetting/WebAction";
+import WebActionForm from "./pages/kamran/AdvanceSetting/WebActionForm";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -335,6 +382,47 @@ function App() {
               <Route path= "reminder" element={<Reminder/>} />
               <Route path= "reminder" element={<ReminderList/>} />
               <Route path= "socialapp" element={<SocialApp/>} />
+              {/*  <Route path= "newprofile" element={<NewProfile/>} />
+              <Route path= "accessm" element={<AccessM/>} />
+              <Route path= "market" element={<Market/>} />
+              <Route path= "sales" element={<Sales/>} />
+              <Route path= "master" element={<Master/>} />
+              <Route path= "ecommerce" element={<ECommerce/>} />
+              <Route path= "Leasing" element={<Leasing/>} />
+              <Route path= "accessmanagment" element={<AccessManagment/>} />*/ }
+               <Route path= "currentuser" element={<CurrentUser/>} />
+                {/*Advance Setting */ }
+               <Route path= "workflow" element={<WorkFlow/>} />
+               <Route path= "workform" element={<WorkForm/>} />
+               <Route path= "worklog" element={<WorkLog/>} />
+               <Route path= "worklogfrom" element={<WorkLogFRom/>} />
+               <Route path= "costume" element={<Costume/>} />
+               <Route path= "costumeform" element={<CostumeForm/>} />
+               <Route path= "paymentconfig" element={<PaymentConfig/>} />
+               <Route path= "newpayment" element={<NewPayment/>} />
+               <Route path= "globalcasting" element={<GlobalCasting/>} />
+               <Route path= "globalform" element={<GlobalForm/>} />
+               <Route path= "globalsetting" element={<GlobalSetting/>} />
+               <Route path= "globalsettingform" element={<GlobalSettingForm/>} />
+               <Route path= "pms" element={<Pms/>} />
+               <Route path= "frequnceytemplateslist" element={<FrequnceyTemplateList/>} />
+               <Route path= "frequnceyform" element={<FrequnceyForm/>} />
+               <Route path="scheduling" element={<Scheduling/>}/>
+               <Route path="schedulingform" element={<SchedulingForm/>}/>
+               <Route path="externallist" element={<ExternalList/>}/>
+               <Route path="externalform" element={<ExternalForm/>}/>
+               <Route path="modulestage" element={<ModuleStage/>}/>
+               <Route path="roter" element={<Roter/>}/>
+               <Route path="stageform2" element={<StageForm2/>}/>
+               <Route path="mobileconfig" element={<MobileConfig/>}/>
+               <Route path="newconfigroter" element={<NewConfigRoter/>}/>
+               <Route path="emailsetting" element={<EmailSetting/>}/>
+               <Route path="mailaddress" element={<MailAddress/>}/>
+               <Route path="newmailaddress" element={<NewMailAddress/>}/>
+               <Route path="emailfooter" element={<EmailFooter/>}/>
+               <Route path="footerform" element={<FooterForm/>}/>
+               <Route path="webaction" element={<WebAction/>}/>
+               <Route path="webactionform" element={<WebActionForm/>}/>
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />

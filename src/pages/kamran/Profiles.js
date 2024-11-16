@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function AccessM() {
+function Profiles() {
   return (
     <div className='card'>
       <div className='table-responsive active-projects style-1'>
@@ -50,5 +50,5 @@ function AccessM() {
   )
 }
 
-export default AccessM
+export default Profiles
 
