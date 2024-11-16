@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import CustomInputField from "../../common/CustomInputField";
 import { CiSearch } from "react-icons/ci";
-import { cityListbyPagination, clodinaryImage, getVentureByUser, postNewVenture } from "../../api/login/Login";
+import { cityListbyPagination, clodinaryImage, getVentureByUser, getVentureId, postNewVenture, ventureUpdate } from "../../api/login/Login";
 import { baseUrlImage } from "../../baseUrl";
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from "react-router-dom";
 
 export default function VenturesForm() {
+    const params = useParams()
+
     const [city, setCity] = useState(null)
-    const [user, setUser] = useState (null)
+    const [user, setUser] = useState(null)
     const [store, setStore] = useState({
         name: '',
         code: '',
         city: '',
+        user: "",
         area: '',
         document: '',
         layout_image: '',
@@ -19,10 +23,9 @@ export default function VenturesForm() {
     const getData = async () => {
         try {
             const res = await cityListbyPagination(0, 100)
-            const ven = await getVentureByUser(0 ,100)
+            const ven = await getVentureByUser(0, 100)
             setUser(ven.data?.user)
             setCity(res.data?.city)
-            console.log(ven + "user")
         } catch (error) {
 
         }
@@ -30,6 +33,35 @@ export default function VenturesForm() {
     useEffect(() => {
         getData()
     }, [])
+
+
+
+    useEffect(() => {
+        const fetchCurrency = async () => {
+            try {
+                if (params?.id) {
+                    const response = await getVentureId(params.id);
+                    const currencyData = response?.data;
+                    setStore(currencyData);
+                } else {
+                    setStore({
+                        name: '',
+                        code: '',
+                        city: '',
+                        user: "",
+                        area: '',
+                        document: '',
+                        layout_image: '',
+                        is_active: true
+                    });
+                }
+            } catch (error) {
+
+            }
+        }
+        fetchCurrency()
+    }, [params.id])
+
     const handleChange = async (e) => {
         const { name, value, type } = e.target
         if (type == 'file') {
@@ -49,19 +81,34 @@ export default function VenturesForm() {
 
     }
     const submitData = async () => {
-        try {
-            const res = await postNewVenture(store)
-            console.log(res)
-            if (res?.statusCode == 200) {
-                toastSuccessMessage("success")
+        if(!params.id){
+            try {
+                const res = await postNewVenture(store)
+                console.log(res)
+                if (res?.statusCode == 200) {
+                    toastSuccessMessage("success")
+                }
+                else {
+                    toasterrorMessage("Fai0-l")
+                }
             }
-            else {
-                toasterrorMessage("Fai0-l")
+            catch (error) {
+                console.log(error.massage)
+            }
+        }else{
+            try{
+                const pt = await ventureUpdate(params.id, store)
+                if (pt?.statusCode == 200) {
+                    toastSuccessMessage("success")
+                }
+                else {
+                    toasterrorMessage("Fai0-l")
+                }
+            }catch(error){
+
             }
         }
-        catch (error) {
-            console.log(error.massage)
-        }
+        
     }
 
     const toastSuccessMessage = (message) => {
@@ -86,7 +133,9 @@ export default function VenturesForm() {
                                 <div className="mt-2">
                                     <label className="d-block my-1">Name</label>
                                     <div className="w-100">
-                                        <CustomInputField type={"text"} value={store?.name}
+                                        <CustomInputField
+                                            type={"text"}
+                                            value={store?.name}
                                             onChange={handleChange}
                                             name="name"
                                         />
@@ -98,7 +147,7 @@ export default function VenturesForm() {
                                     <label className="d-block my-1">Code</label>
                                     <div className="w-100">
                                         <CustomInputField
-                                            type="text"
+                                            type="numbar"
                                             value={store?.code}
                                             onChange={handleChange}
                                             name="code"
@@ -115,7 +164,6 @@ export default function VenturesForm() {
                                             {city && city?.map((item, i) => {
                                                 return <option key={i} value={item._id}>{item.name}</option>
                                             })}
-
                                         </select>
                                     </div>
                                 </div>
@@ -124,12 +172,11 @@ export default function VenturesForm() {
                                 <div className="mt-2">
                                     <label className="d-block my-1">User</label>
                                     <div className="w-100">
-                                        <select className="py-2 w-100 px-4 border border-light" onChange={handleChange} value={store.city} name="city">
+                                        <select className="py-2 w-100 px-4 border border-light" onChange={handleChange} value={store.user} name="user">
                                             <option>Select User</option>
                                             {user && user?.map((item, i) => {
                                                 return <option key={i} value={item._id}>{item.name}</option>
                                             })}
-
                                         </select>
                                     </div>
                                 </div>
