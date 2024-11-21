@@ -110,16 +110,20 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
-import AddMembers from "./pages/kamran/AddMembers";
-import CalenderSharning from "./pages/kamran/CalenderSharning";
-import ChangeDisplay from "./pages/kamran/ChangeDisplay";
-import ChangeTabs from "./pages/kamran/ChangeTabs";
-import ModuleDetails from "./pages/kamran/ModuleDetails";
-import NewSharning from "./pages/kamran/NewSharning";
-import OutLooking from "./pages/kamran/OutLooking";
-import Reminder from "./pages/kamran/Reminder";
-import ReminderList from "./pages/kamran/ReminderList";
-import SocialApp from "./pages/kamran/SocialApp";
+import SelfService from "./pages/selfService";
+import UserManagement from "./pages/userManagement/userManagement";
+import AlphabeticFilter from "./components/rems-status/AlphabeticFilter";
+import { MainProfile } from "./pages/newProfile/main";
+import Newusers from "./components/userManagement/Users/newUser";
+import NewTeam from "./components/userManagement/Teams/NewTeam";
+import Teams from "./components/userManagement/Teams/Teams";
+import AddOns from "./pages/add-ons/add-ons";
+import SMSSettings from "./components/add-onsmain/sms-settings";
+import NewSMS from "./components/add-onsmain/new-sms";
+import NewAppRegistration from "./components/add-onsmain/new-app-registration";
+import Registration from "./components/add-onsmain/registration-list";
+import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
+
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -349,6 +353,13 @@ function App() {
              <Route path="sms-settings/new-sms" element={<NewSMS/>} />
              <Route path="registration-list" element={<Registration/>} />
              <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
+
+
+
+
+
+             {/*  Adil   Module Customization */}
+             <Route path="modulecustomization" element={<ModuleCustomization/>} />
             </Route>
           </>
         )}
