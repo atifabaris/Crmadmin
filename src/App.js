@@ -122,6 +122,8 @@ import SMSSettings from "./components/add-onsmain/sms-settings";
 import NewSMS from "./components/add-onsmain/new-sms";
 import NewAppRegistration from "./components/add-onsmain/new-app-registration";
 import Registration from "./components/add-onsmain/registration-list";
+import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
+
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -333,6 +335,13 @@ function App() {
              <Route path="sms-settings/new-sms" element={<NewSMS/>} />
              <Route path="registration-list" element={<Registration/>} />
              <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
+
+
+
+
+
+             {/*  Adil   Module Customization */}
+             <Route path="modulecustomization" element={<ModuleCustomization/>} />
             </Route>
           </>
         )}
