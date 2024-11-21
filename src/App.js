@@ -111,8 +111,17 @@ import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
 import SelfService from "./pages/selfService";
-import UserManagement from "./pages/userManagement";
+import UserManagement from "./pages/userManagement/userManagement";
 import AlphabeticFilter from "./components/rems-status/AlphabeticFilter";
+import { MainProfile } from "./pages/newProfile/main";
+import Newusers from "./components/userManagement/Users/newUser";
+import NewTeam from "./components/userManagement/Teams/NewTeam";
+import Teams from "./components/userManagement/Teams/Teams";
+import AddOns from "./pages/add-ons/add-ons";
+import SMSSettings from "./components/add-onsmain/sms-settings";
+import NewSMS from "./components/add-onsmain/new-sms";
+import NewAppRegistration from "./components/add-onsmain/new-app-registration";
+import Registration from "./components/add-onsmain/registration-list";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -314,12 +323,21 @@ function App() {
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />
              <Route path="selfService" element={<SelfService/>} />
-             <Route path="userManagement" element={<UserManagement/>} />
+             <Route path="usermanagement" element={<UserManagement/>} />
+             <Route path="usermanagment/mainprofile" element={<MainProfile/>} />
+             <Route path="usermanagment/newUser" element={<Newusers/>} />
+             <Route path="usermanagment/teams" element={<Teams/>} />
+             <Route path="usermanagment/newteam" element={<NewTeam/>} />
+             <Route path="add-ons" element={<AddOns/>} />
+             <Route path="sms-settings" element={<SMSSettings/>} />
+             <Route path="sms-settings/new-sms" element={<NewSMS/>} />
+             <Route path="registration-list" element={<Registration/>} />
+             <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
             </Route>
           </>
         )}
       </Routes>
-    </>
+    </> 
   );
 }
 

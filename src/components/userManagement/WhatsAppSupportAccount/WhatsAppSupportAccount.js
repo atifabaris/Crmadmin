@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function DesignationHierarchy () {
+function WhatsAppSupportAccount () {
 
     return(
         <div className='card'>
         <div className='table-responsive active-projects style-1'>
-            <h2 className='tbl-caption text-light'>Designation Hierarchy
-            </h2>
+            <h2 className='tbl-caption text-light'> 
+            WhatsApp Support Account List
+            <Link className="btn btn-primary btn-sm"  to="/newteam" role="button" aria-controls="offcanvasExample">
+            + New List</Link></h2>
      {/* <button type="button" className="btn btn-secondary btn-sm" > + Invite Employee
                                     </button> */}
 </div>
@@ -18,20 +20,24 @@ function DesignationHierarchy () {
                     
                    
                     </th>
-                    <th className="p-1">Name</th>
-                    <th className="p-1">Code</th>
-                    <th className="p-1">City</th>
+                    <th className="p-1">Module Caption</th>
+                    <th className="p-1">Singular Name</th>
+                    <th className="p-1">Description</th>
+                    <th className="p-1">Allow Audit Trail</th>
+                    <th className="p-1">Allow Web Template</th>
                     <th className="p-1">Status</th>
-                
+                   
                 </tr>
                 <tr className="border p-1">
       
         <td className="p-1">
            
         </td>
-    <td className='p-1'>Administrator</td>
-    <td className='p-1'>Admin Profile</td>
-    <td className='p-1'>Dharani</td>
+    <td className='p-1'> </td>
+    <td className='p-1'></td>
+    <td className='p-1'></td>
+    <td className='p-1'>A</td>
+    <td className='p-1'></td>
     <div>
       <a className="btn btn-primary shadow btn-xs sharp me-1">
       <i class="fa fa-pencil"> </i>
@@ -42,8 +48,9 @@ function DesignationHierarchy () {
         </i>
           </a>
     </div>
+   
+   
         </tr>
-
             </table>
         </div>
 </div>
@@ -51,4 +58,4 @@ function DesignationHierarchy () {
     );
 }
 
-export default DesignationHierarchy;
+export default WhatsAppSupportAccount;
