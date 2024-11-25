@@ -2,6 +2,7 @@ import React from "react";
 import PSMunit from "../../components/rems-status/PSMunit";
 import SaveCancle from "../../components/rems-status/SaveCancle";
 import VenturesForm from "../../components/rems-status/VenturesForm";
+import AlphabeticFilter from "../../components/rems-status/AlphabeticFilter";
 
 export default function CreateBuilding(){
     return(
@@ -9,6 +10,7 @@ export default function CreateBuilding(){
             <PSMunit title={"New Building"}/>
             <SaveCancle />
             <VenturesForm />
+            
         </div>
     )
 }

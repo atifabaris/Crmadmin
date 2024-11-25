@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import CustomInputField from "../../common/CustomInputField";
-import { clodinaryImage, getCreVenture, postNewProperty } from "../../api/login/Login";
+import { clodinaryImage, getCreVenture, getPriorityId, postNewProperty, propertyUpdate } from "../../api/login/Login";
 import { baseUrlImage } from "../../baseUrl";
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from "react-router-dom";
 
 
 export default function PropertyForm() {
+    const params = useParams
     const [venture, setVenture] = useState(null)
     const [store, setStore] = useState({
         name: "",
@@ -27,6 +29,28 @@ export default function PropertyForm() {
     useEffect(() => {
         getData()
     }, [])
+
+    useEffect(() =>{
+        const fetchCurrency = async()=>{
+            if(params.id){
+            const respepond = await getPriorityId(params.id)
+            const currencyData = respepond.data;
+            setStore(currencyData);
+            }else{
+                setStore({
+                    name: "",
+                    code: "",
+                    venture: "",
+                    construction_status: "",
+                    construction_start_date: "",
+                    construction_end_date: "",
+                    layout_image: "",
+                })
+            }
+        }
+
+        fetchCurrency()
+    }, [params.id])
 
     const handleChange = async (e) =>{
         const { name, value, type} = e.target
@@ -51,16 +75,40 @@ export default function PropertyForm() {
         }
     }
     const submitData = async () => {
-        try{
-            const res = await postNewProperty(store)
-            console.log(res)
-            if(res.statusCode == 200){
+        // try{
+        //     const res = await postNewProperty(store)
+        //     console.log(res)
+        //     if(res.statusCode == 200){
+        //             toastSuccessMessage("success")
+        //     }else{
+        //             toastErrorMessage("error")
+        //     }
+        // }catch (error){
+        //     console.log(error.massage)
+        // }
+        if(!params.id){
+            try{
+                const res = await postNewProperty(store)
+                console.log(res)
+                if(res.statusCode == 200){
                     toastSuccessMessage("success")
-            }else{
+                }else{
                     toastErrorMessage("error")
+                }
+                }catch (error){
+                    console.log(error.massage)
+                }
+        }else{
+            try{
+                const pt = await propertyUpdate(params.id, store)
+                if(pt.statusCode == 200){
+                toastSuccessMessage("success")
+            }else{
+                toastErrorMessage("error")
             }
-        }catch (error){
-            console.log(error.massage)
+            }catch(error){
+                console.error("error")
+            }
         }
     }
 
@@ -125,8 +173,7 @@ const toastErrorMessage = (message) => {
                                 <label className="d-block my-1"> Construction Status</label>
                                 <div className="w-100">
                                     <select className="py-2 w-100 px-4 border border-light" name="city">
-                                        <option>Select Construction</option>
-                                        <option > Construction Status</option>
+                                        <option > select</option>
                                     </select>
                                 </div>
                             </div>

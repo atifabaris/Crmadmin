@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import CustomInputField from "../../common/CustomInputField";
-import {getCreblock, postNewpropertycharges } from "../../api/login/Login";
+import {getCreblock, getProperychargeId, postNewpropertycharges, propertycahgerDelte } from "../../api/login/Login";
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from "react-router-dom";
 
 export default function PropertychargesForm(){
     const [block, setblock] = useState(null)
+    const params = useParams
     const [store, setStore] = useState({
         name: "",
         code: "",
@@ -24,6 +26,23 @@ export default function PropertychargesForm(){
         getData()
     }, [])
 
+    useEffect(()=>{
+        const fetchCurrency = async()=>{
+        if(params.id){
+                const response = await getProperychargeId(params.id)
+                const currencyData = response.data
+                setStore(currencyData)
+            }else{
+            setStore({
+                name: "",
+                code: "",
+                block: "",
+                amount: "",
+            })
+        }
+    }
+    fetchCurrency()
+    }, [params.id])
     const handleChange = (e) =>{
         const {name, value} = e.target
         const clone = {...store}
@@ -31,15 +50,34 @@ export default function PropertychargesForm(){
         setStore(clone)
     }
     const Submit = async()=>{
-        try{
-            const res = await postNewpropertycharges(store)
-            if(res.statusCode == 200){
-                toastSuccessMessage("success")
+        // try{
+        //     const res = await postNewpropertycharges(store)
+        //     if(res.statusCode == 200){
+        //         toastSuccessMessage("success")
+        //     }else{
+        //         toasterrorMessage("error")
+        //     }
+        // }catch(error){
+
+        // }
+        if(!params.id){
+            try{
+                const res = await postNewpropertycharges(store)
+                if(res.statusCode == 200){
+                  toastSuccessMessage("success")
+                     }else{
+                         toasterrorMessage("error")
+                     }
+                 }catch(error){
+                    console.error("error")
+             }
+        }else{
+            const pt = await propertycahgerDelte(params.id, store)
+            if(pt.statusCode == 200){
+                toastSuccessMessage('success')
             }else{
                 toasterrorMessage("error")
             }
-        }catch(error){
-
         }
     }
     const toastSuccessMessage = (message) => {

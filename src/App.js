@@ -133,6 +133,19 @@ import EditCalendar from "./components/administration/companySettingsMain/compan
 import CalendarList from "./components/administration/companySettingsMain/companyAccordianList/calendarList/CalendarList";
 import CompanyInformationForm from "./components/administration/companySettingsMain/companyAccordianList/companyInformation/companyInformationForm/CompanyInformationForm";
 
+import SelfService from "./pages/selfService";
+import UserManagement from "./pages/userManagement/userManagement";
+import AlphabeticFilter from "./components/rems-status/AlphabeticFilter";
+import { MainProfile } from "./pages/newProfile/main";
+import Newusers from "./components/userManagement/Users/newUser";
+import NewTeam from "./components/userManagement/Teams/NewTeam";
+import Teams from "./components/userManagement/Teams/Teams";
+import AddOns from "./pages/add-ons/add-ons";
+import SMSSettings from "./components/add-onsmain/sms-settings";
+import NewSMS from "./components/add-onsmain/new-sms";
+import NewAppRegistration from "./components/add-onsmain/new-app-registration";
+import Registration from "./components/add-onsmain/registration-list";
+import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
 
 
 //---------------------JUNAID IMPORT END --------------------------
@@ -266,49 +279,43 @@ function App() {
               <Route path="productlist" element={<ProductList />} />
               <Route path="dailyproduction" element={<DailyProduction />} />
 
-              <Route path="rems-status" element={<REMSstatus />} />
-              <Route path="editpms" element={<EditPMSenquary />} />
-              <Route path="editbooking" element={<Editbooking />} />
-              <Route path="reportdate" element={<ReportData />} />
-              <Route path="bookingstatus" element={<BookingStatus />} />
-              <Route path="property" element={<PropertyHome />} />
-              <Route path="newproperty" element={<CreateProperty />} />
-              <Route path="compaigs" element={<Compaigs />} />
-              <Route path="newcompaigs" element={<NEwCampaigs />} />
-              <Route path="bookingsnap" element={<BookingSnap />} />
-              <Route path="ventures" element={<Ventures />} />
+              <Route path="rems-status" element={<REMSstatus />} />  
+              <Route path="editpms" element={<EditPMSenquary />} />  
+              <Route path="editbooking" element={<Editbooking />} />  
+              <Route path="reportdate" element={<ReportData />} />  
+              <Route path="bookingstatus" element={<BookingStatus />} />  
+              <Route path="property" element={<PropertyHome />} />  
+              <Route path="newproperty" element={<CreateProperty />} />  
+              <Route path="newproperty/:id" element={<CreateProperty />} />  
+              <Route path="campaings" element={<Compaigs />} />  
+              <Route path="newcompaigs" element={<NEwCampaigs />} />  
+              <Route path="bookingsnap" element={<BookingSnap />} />  
+              <Route path="ventures" element={<Ventures />} />  
               <Route path="newventures" element={<Newventures />} />
+              <Route path="newventures/:id" element={<Newventures />} />
               <Route path="floor" element={<Floor />} />
-              <Route path="newfloor" element={<NewFloor />} />
+              <Route path="newfloor" element={<NewFloor />} /> 
               <Route path="block" element={<Block />} />
               <Route path="newblock" element={<NewBlock />} />
+              <Route path="newblock/:id" element={<NewBlock />} />
+
 
               <Route path="propertycharges" element={<PropertyCharges />} />
-              <Route
-                path="newpropertycharges"
-                element={<CreatePropertyCharges />}
-              />
+              <Route path="newpropertycharges" element={<CreatePropertyCharges />} />
+              <Route path="newpropertycharges/:id" element={<CreatePropertyCharges />} />
               <Route path="propertyshowing" element={<PropertyShowing />} />
-              <Route
-                path="newpropertyshowing"
-                element={<CreatePropertyShowing />}
-              />
+              <Route path="newpropertyshowing" element={<CreatePropertyShowing />} />
+              <Route path="newpropertyshowing/:id" element={<CreatePropertyShowing />} />
               <Route path="propertyunit" element={<PropertyUnit />} />
               <Route path="newpropertyunit" element={<CreatePropertyunit />} />
+              <Route path="newpropertyunit/:id" element={<CreatePropertyunit />} />
               <Route path="propertystages" element={<PropertyStages />} />
-              <Route
-                path="newpropertystages"
-                element={<CreatePropertyStages />}
-              />
-              <Route
-                path="propertystagesplane"
-                element={<PropertyStagePlane />}
-              />
-              <Route
-                path="newpropertystagesplane"
-                element={<CreateStageplan />}
-              />
-
+              <Route path="newpropertystages" element={<CreatePropertyStages />} />
+              <Route path="newpropertystages/:id" element={<CreatePropertyStages />} />
+              <Route path="propertystagesplane" element={<PropertyStagePlane />} />
+              <Route path="newpropertystagesplane" element={<CreateStageplan />} />
+              <Route path="newpropertystagesplane/:id" element={<CreateStageplan />} />
+              
               <Route path="propertydetail" element={<PropertyDetail />} />
               <Route path="reporthome" element={<ReportHome />} />
               <Route path="newreport" element={<CreateReport />} />
@@ -325,6 +332,7 @@ function App() {
               <Route path="bookingcancel" element={<BookingCancel />} />
               <Route path="formcancel" element={<FormCancel />} />
               <Route path="coustumemodel" element={<CoustumeModel />} />
+              <Route path="coustumemodel" element={<CoustumeModel />} />
 
               {/* ...............Account..................... */}
               <Route path="fashiondeshboard" element={<FashionDeshboard />} />
@@ -332,17 +340,8 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
 
-              {/* -----------------meraj Route Start-------- */}
-              <Route path="view-agent" element={<ViewAgent />} />
-              <Route path="create-agent" element={<CreateAgent />} />
-              <Route path="view-brokers" element={<ViewBrokers />} />
-              <Route path="create-brokers" element={<CreateBrokers />} />
-              {/* setting */}
-              <Route path="third-party-apps" element={<ThirdPartyApps />} />
-              <Route path="tracker-settings" element={<TrackerSettings />} />
-              <Route path="plan-details" element={<PlanDetails />} />
-              <Route mpath="plan-details-upgrade" element={<PlanDetailUpgrade />}/>
-              <Route path="data-management" element={<DataManagement />} />
+              
+              <Route path="*" element={<PageNotFound />} />
 
               {/* Advanced Settings */}
               <Route path="company-setting-main" element={<CompanyuSettingMian />} />
@@ -362,18 +361,36 @@ function App() {
               <Route path="communication-templates" element={<CommunicationTemplates />} />
               <Route path="email-templates" element={<EmailTemplates />} />
               <Route path="edit-email-templates" element={<EditEmailTemplates />} />
+              
+             {/* Adil start here */ }
+             <Route path="tenant" element={<Tenant/>} />
+             <Route path="newTenant" element={<NewTenantform/>} />
+             <Route path="selfService" element={<SelfService/>} />
+             <Route path="usermanagement" element={<UserManagement/>} />
+             <Route path="usermanagment/mainprofile" element={<MainProfile/>} />
+             <Route path="usermanagment/newUser" element={<Newusers/>} />
+             <Route path="usermanagment/teams" element={<Teams/>} />
+             <Route path="usermanagment/newteam" element={<NewTeam/>} />
+             <Route path="add-ons" element={<AddOns/>} />
+             <Route path="sms-settings" element={<SMSSettings/>} />
+             <Route path="sms-settings/new-sms" element={<NewSMS/>} />
+             <Route path="registration-list" element={<Registration/>} />
+             <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
 
 
-              {/* -----------------meraj Route End-------- */}
 
               {/* Adil start here */}
               <Route path="tenant" element={<Tenant />} />
               <Route path="newTenant" element={<NewTenantform />} />
+
+
+             {/*  Adil   Module Customization */}
+             <Route path="modulecustomization" element={<ModuleCustomization/>} />
             </Route>
           </>
         )}
       </Routes>
-    </>
+    </> 
   );
 }
 
