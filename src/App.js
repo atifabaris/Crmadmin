@@ -110,6 +110,29 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
+import PlanDetailUpgrade from "./pages/planDetailUpgrade";
+import DataManagement from "./pages/dataManagement";
+// import CompanySetting from "./pages/companySetting";
+
+import { Calendar } from "antd";
+import CommunicationTemplates from "./components/administration/communicationTemplatesMain.js/CommunicationTemplates";
+import EmailTemplates from "./components/administration/communicationTemplatesMain.js/emailTemplates/EmailTemplates";
+import EditEmailTemplates from "./components/administration/communicationTemplatesMain.js/emailTemplates/editEmailTemplates/EditEmailTemplates";
+import CompanyuSettingMian from "./components/administration/companySettingsMain/CompanySettingMain";
+import Currencies from "./components/administration/companySettingsMain/companyAccordianList/currencies/Currencies";
+import CurrencyExchange from "./components/administration/companySettingsMain/companyAccordianList/currencyExchange/CurrencyExchange";
+import FiscalYear from "./components/administration/companySettingsMain/companyAccordianList/fiscalYear/FiscalYear";
+import { ManageCurrencies } from "./components/administration/companySettingsMain/companyAccordianList/manageCurrencies/ManageCurrencies";
+import RenameApplications from "./components/administration/companySettingsMain/companyAccordianList/renameApplications/RenameApplications";
+import RenameModules from "./components/administration/companySettingsMain/companyAccordianList/renameModules/RenameModules";
+import RenameViewGroups from "./components/administration/companySettingsMain/companyAccordianList/renameViewGroups/RenameViewGroups";
+import EditFiscalYear from "./components/administration/companySettingsMain/companyAccordianList/fiscalYear/editFiscalYear/EditFiscalYear";
+import NewFiscalYear from "./components/administration/companySettingsMain/companyAccordianList/fiscalYear/newFiscalYear/NewFiscalYear";
+import { EditCurrency } from "./components/administration/companySettingsMain/companyAccordianList/currencies/editCurrency/EditCurrency";
+import EditCalendar from "./components/administration/companySettingsMain/companyAccordianList/calendarList/editCalendar/EditCalendar";
+import CalendarList from "./components/administration/companySettingsMain/companyAccordianList/calendarList/CalendarList";
+import CompanyInformationForm from "./components/administration/companySettingsMain/companyAccordianList/companyInformation/companyInformationForm/CompanyInformationForm";
+
 import SelfService from "./pages/selfService";
 import UserManagement from "./pages/userManagement/userManagement";
 import AlphabeticFilter from "./components/rems-status/AlphabeticFilter";
@@ -320,6 +343,24 @@ function App() {
               
               <Route path="*" element={<PageNotFound />} />
 
+              {/* Advanced Settings */}
+              <Route path="company-setting-main" element={<CompanyuSettingMian />} />
+              <Route path="company-information" element={<CompanyInformationForm />} />
+              <Route path="fiscal-year" element={<FiscalYear />} />
+              <Route path="edit-fiscal-year" element={<EditFiscalYear />} />
+              <Route path="new-fiscal-year" element={<NewFiscalYear />} />
+              <Route path="currencies" element={<Currencies />} />
+              <Route path="edit-currency" element={<EditCurrency />} />
+              <Route path="calendar-list" element={<CalendarList />} />
+              <Route path="edit-calendar" element={<EditCalendar />} />
+              <Route path="manage-currencies" element={<ManageCurrencies />} />	
+              <Route path="currency-exchange" element={<CurrencyExchange />} />
+              <Route path="rename-modules" element={<RenameModules />} />
+              <Route path="rename-applications" element={<RenameApplications />} />
+              <Route path="rename-view-groups" element={<RenameViewGroups />} />
+              <Route path="communication-templates" element={<CommunicationTemplates />} />
+              <Route path="email-templates" element={<EmailTemplates />} />
+              <Route path="edit-email-templates" element={<EditEmailTemplates />} />
               
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
@@ -338,6 +379,9 @@ function App() {
 
 
 
+              {/* Adil start here */}
+              <Route path="tenant" element={<Tenant />} />
+              <Route path="newTenant" element={<NewTenantform />} />
 
 
              {/*  Adil   Module Customization */}
