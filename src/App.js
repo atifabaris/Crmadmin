@@ -28,7 +28,6 @@ import LoginPasswordReset from "./pages/paswordResetPages";
 import { getToken } from "firebase/messaging";
 import { messaging } from "./firebase/fireBase";
 import { sendNotification } from "./api/login/Login";
-import PageNotFound from "./common/pageNotFound/PageNotFound";
 //---------------------end--------------------------
 //---------------------After Delete start--------------------------
 import ContestMaster from "./components/topNavigationComp/masters/contest/ContestMaster";
@@ -58,11 +57,9 @@ import AddNewShipment from "./pages/Addnewshipment";
 import ProductList from "./pages/productlist";
 import DailyProduction from "./pages/dailyproduction";
 import FashionDeshboard from "./pages/fashiondeshboard";
-import AccountLedger from "./pages/account-ledger";
 import REMSstatus from "./pages/rems-status";
 import EditPMSenquary from "./pages/Editpmsenquary";
 import Editbooking from "./pages/Editbooking/Index";
-import Report from "./pages/ReportData";
 import BookingStatus from "./pages/bookingStatus";
 import PropertyHome from "./pages/Property";
 import Compaigs from "./pages/Compaigs";
@@ -91,14 +88,6 @@ import CreateReport from "./pages/CreateReport/Index";
 import CreateProperty from "./pages/CreateProperty";
 import Building from "./pages/Bulid";
 import CreateBuilding from "./pages/CreateBuilding";
-import ViewAgent from "./pages/viewAgent";
-import CreateAgent from "./pages/createAgent";
-import { ViewBrokers } from "./pages/viewBrokers";
-import CreateBrokers from "./pages/createBrokers";
-import ThirdPartyApps from "./pages/thirdPartyApps";
-import GoogleTab from "./components/thirdPartyAppsFile/googelTab/GoogleTab";
-import { TrackerSettings } from "./pages/trackerSettings";
-import PlanDetails from "./pages/planDetails";
 import List from "./pages/kamran/List";
 import LegalCase from "./pages/kamran/LegalCase";
 import UnitRes from "./pages/kamran/UnitRes";
@@ -111,8 +100,7 @@ import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
 import SelfService from "./pages/selfService";
-import UserManagement from "./pages/userManagement/userManagement";
-import AlphabeticFilter from "./components/rems-status/AlphabeticFilter";
+import UserManagement from "./pages/userManagement/userManagement"
 import { MainProfile } from "./pages/newProfile/main";
 import Newusers from "./components/userManagement/Users/newUser";
 import NewTeam from "./components/userManagement/Teams/NewTeam";
@@ -122,7 +110,19 @@ import SMSSettings from "./components/add-onsmain/sms-settings";
 import NewSMS from "./components/add-onsmain/new-sms";
 import NewAppRegistration from "./components/add-onsmain/new-app-registration";
 import Registration from "./components/add-onsmain/registration-list";
-import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
+import ModuleCustomization from "./pages/modulecustomization/modulecustomization";
+import CustomizeFields from "./pages/custompages/customize-fields";
+import CustomizeFieldsRules from "./pages/custompages/customize-fields-rules";
+import Rule from "./pages/newrules/rule";
+import FieldProperties from "./components/filed-property/field-properties";
+import Properties from "./pages/field-prop-pages/field-properties";
+import FieldPropertie from "./pages/field-prop-pages/field-properties";
+import RollUpField from "./pages/roll-ups-field/roll-ups-field";
+import ExternalModules from "./pages/custompages/customize-external-modules";
+import ExternalModule from "./components/new-external-modules/new-external-modules";
+import DesignationHierarchy from "./components/userManagement/DesignationHierarchy/designation-hierarchy";
+import Profiles from "./components/userManagement/Profiles/profiles";
+
 
 
 //---------------------JUNAID IMPORT END --------------------------
@@ -329,7 +329,7 @@ function App() {
               <Route path= "bookingcancel" element={<BookingCancel/>} />
               <Route path= "formcancel" element={<FormCancel/>} />
               <Route path= "coustumemodel" element={<CoustumeModel/>} />
-              <Route path= "addmembers" element={<AddMembers/>} />
+              {/* <Route path= "addmembers" element={<AddMembers/>} />
               <Route path= "calendersharning" element={<CalenderSharning/>} />
               <Route path= "changedisplay" element={<ChangeDisplay/>} />
               <Route path= "changetabs" element={<ChangeTabs/>} />
@@ -338,7 +338,8 @@ function App() {
               <Route path= "outlooking" element={<OutLooking/>} />
               <Route path= "reminder" element={<Reminder/>} />
               <Route path= "reminder" element={<ReminderList/>} />
-              <Route path= "socialapp" element={<SocialApp/>} />
+              <Route path= "socialapp" element={<SocialApp/>} /> */}
+              
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />
@@ -353,13 +354,25 @@ function App() {
              <Route path="sms-settings/new-sms" element={<NewSMS/>} />
              <Route path="registration-list" element={<Registration/>} />
              <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
+             <Route path="teams" element={<Teams/>} />
+             <Route path="designation-hierarchy" element={<DesignationHierarchy/>} />
+             <Route path="profiles" element={<Profiles/>} />
 
 
 
 
-
-             {/*  Adil   Module Customization */}
+             {/*  Adil   Module Customization  all pages*/}
              <Route path="modulecustomization" element={<ModuleCustomization/>} />
+             <Route path="customize-fields" element={<CustomizeFields/>} />
+             <Route path="customize-fields-rules" element={<CustomizeFieldsRules/>} />
+             <Route path="rule" element={<Rule/>} />
+             <Route path="field-properties" element={<FieldProperties/>} />
+             <Route path="roll-ups-field" element={<RollUpField/>} />
+             <Route path="customize-external-modules" element={<ExternalModules/>} />
+             <Route path="new-external-modules" element={<ExternalModule/>} />
+             
+      
+             
             </Route>
           </>
         )}

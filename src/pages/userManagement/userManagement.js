@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DesignationHierarchy from "../../components/userManagement/DesignationHierarchy/DesignationHierarchy";
+import DesignationHierarchy from "../../components/userManagement/DesignationHierarchy/designation-hierarchy";
 import Profiles from "../../components/userManagement/Profiles/profiles";
 import Roles from "../../components/userManagement/Roles/Roles";
 import Teams from "../../components/userManagement/Teams/Teams";

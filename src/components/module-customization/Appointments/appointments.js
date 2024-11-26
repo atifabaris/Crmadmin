@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Activities() {
+function Appointments() {
   const [list, setList] = useState(0);
 
   const TabMarket = (num) => {
@@ -33,10 +33,10 @@ function Activities() {
   const rightColumn = filteredItems.slice(Math.ceil(filteredItems.length / 2));
 
   return (
-    <div className="col-8">
-      <div className="d-flex mt-1 gap-2">
+    <div className="col-8 p-2 bg-light border rounded-1">
+      <div className="d-flex mt-1 gap-2 p-2 bold fs-5 text-black ">
         {/* Left Column */}
-        <h1>Customize Activities</h1>
+        <h1>Customize Appointments</h1>
 
         <ul className="me-5">
           {leftColumn.map((item, i) => (
@@ -72,4 +72,4 @@ function Activities() {
   );
 }
 
-export default Activities;
+export default Appointments;
