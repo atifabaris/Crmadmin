@@ -448,7 +448,7 @@ function App() {
               <Route path="edit-currency" element={<EditCurrency />} />
               <Route path="calendar-list" element={<CalendarList />} />
               <Route path="edit-calendar" element={<EditCalendar />} />
-              <Route path="manage-currencies" element={<ManageCurrencies />} />	
+              <Route path="manage-currencies" element={<ManageCurrencies />} />
               <Route path="currency-exchange" element={<CurrencyExchange />} />
               <Route path="rename-modules" element={<RenameModules />} />
               <Route path="rename-applications" element={<RenameApplications />} />
@@ -456,106 +456,106 @@ function App() {
               <Route path="communication-templates" element={<CommunicationTemplates />} />
               <Route path="email-templates" element={<EmailTemplates />} />
               <Route path="edit-email-templates" element={<EditEmailTemplates />} />
-              
-            
+
+
               {/*------------Kamran-----------*/}
               <Route path="list" element={<List />} />
               <Route path="legalcase" element={<LegalCase />} />
               <Route path="unitres" element={<UnitRes />} />
-              <Route path= "unitform" element={<UnitForm/>} />
-              <Route path= "transferbooking" element={<TransferBooking/>} />
-              <Route path= "newbooking" element={<NewBooking/>} />
-              <Route path= "bookingcancel" element={<BookingCancel/>} />
-              <Route path= "formcancel" element={<FormCancel/>} />
-              <Route path= "coustumemodel" element={<CoustumeModel/>} />
-              <Route path= "addmembers" element={<AddMembers/>} />
-              <Route path= "calendersharning" element={<CalenderSharning/>} />
-              <Route path= "changedisplay" element={<ChangeDisplay/>} />
-              <Route path= "changetabs" element={<ChangeTabs/>} />
-              <Route path= "moduledetails" element={<ModuleDetails/>} />
-              <Route path= "newsharning" element={<NewSharning/>} />
-              <Route path= "outlooking" element={<OutLooking/>} />
-              <Route path= "reminder" element={<Reminder/>} />
-              <Route path= "reminder" element={<ReminderList/>} />
-              <Route path= "socialapp" element={<SocialApp/>} />
+              <Route path="unitform" element={<UnitForm />} />
+              <Route path="transferbooking" element={<TransferBooking />} />
+              <Route path="newbooking" element={<NewBooking />} />
+              <Route path="bookingcancel" element={<BookingCancel />} />
+              <Route path="formcancel" element={<FormCancel />} />
+              <Route path="coustumemodel" element={<CoustumeModel />} />
+              <Route path="addmembers" element={<AddMembers />} />
+              <Route path="calendersharning" element={<CalenderSharning />} />
+              <Route path="changedisplay" element={<ChangeDisplay />} />
+              <Route path="changetabs" element={<ChangeTabs />} />
+              <Route path="moduledetails" element={<ModuleDetails />} />
+              <Route path="newsharning" element={<NewSharning />} />
+              <Route path="outlooking" element={<OutLooking />} />
+              <Route path="reminder" element={<Reminder />} />
+              <Route path="reminder" element={<ReminderList />} />
+              <Route path="socialapp" element={<SocialApp />} />
 
-              
-               <Route path= "newprofile" element={<NewProfile/>} />
-              <Route path= "accessm" element={<AccessM/>} />
-              <Route path= "accessmanagment" element={<AccessManagment/>} />
-              <Route path= "property-marketing" element={<PropertyMarketing/>} />
-                {/*Advance Setting */ }
-                <Route path= "currentuser" element={<CurrentUser/>} />
-               <Route path= "workflow" element={<WorkFlow/>} />
-               <Route path= "workform" element={<WorkForm/>} />
-               <Route path= "worklog" element={<WorkLog/>} />
-               <Route path= "worklogfrom" element={<WorkLogFRom/>} />
-               <Route path= "costume" element={<Costume/>} />
-               <Route path= "costumeform" element={<CostumeForm/>} />
-               <Route path= "paymentconfig" element={<PaymentConfig/>} />
-               <Route path= "newpayment" element={<NewPayment/>} />
-               <Route path= "globalcasting" element={<GlobalCasting/>} />
-               <Route path= "globalform" element={<GlobalForm/>} />
-               <Route path= "globalsetting" element={<GlobalSetting/>} />
-               <Route path= "globalsettingform" element={<GlobalSettingForm/>} />
-               <Route path= "pms" element={<Pms/>} />
-               <Route path= "frequnceytemplateslist" element={<FrequnceyTemplateList/>} />
-               <Route path= "frequnceyform" element={<FrequnceyForm/>} />
-               <Route path="scheduling" element={<Scheduling/>}/>
-               <Route path="schedulingform" element={<SchedulingForm/>}/>
-               <Route path="externallist" element={<ExternalList/>}/>
-               <Route path="externalform" element={<ExternalForm/>}/>
-               <Route path="modulestage" element={<ModuleStage/>}/>
-               <Route path="roter" element={<Roter/>}/>
-               <Route path="stageform2" element={<StageForm2/>}/>
-               <Route path="mobileconfig" element={<MobileConfig/>}/>
-               <Route path="newconfigroter" element={<NewConfigRoter/>}/>
-               <Route path="emailsetting" element={<EmailSetting/>}/>
-               <Route path="mailaddress" element={<MailAddress/>}/>
-               <Route path="newmailaddress" element={<NewMailAddress/>}/>
-               <Route path="emailfooter" element={<EmailFooter/>}/>
-               <Route path="footerform" element={<FooterForm/>}/>
-               <Route path="webaction" element={<WebAction/>}/>
-               <Route path="webactionform" element={<WebActionForm/>}/>
-               <Route path="manageapplication" element={<ManageApplication/>}/>
-               <Route path="newapplicationform" element={<NewApplicatinForm/>}/>
-               <Route path="externalreport" element={<ExternalReport/>}/>
-               <Route path="externalreportform" element={<ExternalReportForm/>}/>
-               <Route path="managesub" element={<ManageSub/>}/>
-               <Route path="managesubform" element={<ManageSubForm/>}/>
-               <Route path="surveylist" element={<SurveyList/>}/>
-               <Route path="surveyform" element={<SurveyForm/>}/>
-               <Route path="newsurveyass" element={<NewSurveyAss/>}/>
-               <Route path="newsurveyassform" element={<NewSurveyAssForm/>}/>
-               <Route path="import" element={<Import/>}/>
-               <Route path="importform" element={<ImportForm/>}/>
-               <Route path="masstrasfer" element={<MassTrasfer/>}/>
-               <Route path="massform" element={<MassForm/>}/>
-               <Route path="resetcompanydata" element={<ResetCompanyData/>}/>
-               <Route path="newdatapolicy" element={<NewDataPolicy/>}/>
-               <Route path="newdatapolicyform" element={<NewDataPolicyForm/>}/>
-               <Route path="sales-and-marketing" element={<SaleMarketing/>}/>
-               <Route path="sales-and-marketing/target" element={<Target/>}/>
-               <Route path="sales-and-marketing/sales" element={<SalesCycle/>}/>
-               <Route path="sales-and-marketing/assignmentrules" element={<Target/>}/>
-               <Route path="sales-and-marketing/sales" element={<SalesCycle/>}/>
-             {/* Warehouse customize Kamran start here */ }
-             <Route path="warehouse" element={<WareHouse/>} />
-             <Route path="costumizefields" element={<CostumizeFields/>} />
-             {/* Adil start here */ }
-             <Route path="tenant" element={<Tenant/>} />
-             <Route path="newTenant" element={<NewTenantform/>} />
-             <Route path="selfService" element={<SelfService/>} />
-             <Route path="usermanagement" element={<UserManagement/>} />
-             <Route path="usermanagment/mainprofile" element={<MainProfile/>} />
-             <Route path="usermanagment/newUser" element={<Newusers/>} />
-             <Route path="usermanagment/teams" element={<Teams/>} />
-             <Route path="usermanagment/newteam" element={<NewTeam/>} />
-             <Route path="add-ons" element={<AddOns/>} />
-             <Route path="sms-settings" element={<SMSSettings/>} />
-             <Route path="sms-settings/new-sms" element={<NewSMS/>} />
-             <Route path="registration-list" element={<Registration/>} />
-             <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
+
+              <Route path="newprofile" element={<NewProfile />} />
+              <Route path="accessm" element={<AccessM />} />
+              <Route path="accessmanagment" element={<AccessManagment />} />
+              <Route path="property-marketing" element={<PropertyMarketing />} />
+              {/*Advance Setting */}
+              <Route path="currentuser" element={<CurrentUser />} />
+              <Route path="workflow" element={<WorkFlow />} />
+              <Route path="workform" element={<WorkForm />} />
+              <Route path="worklog" element={<WorkLog />} />
+              <Route path="worklogfrom" element={<WorkLogFRom />} />
+              <Route path="costume" element={<Costume />} />
+              <Route path="costumeform" element={<CostumeForm />} />
+              <Route path="paymentconfig" element={<PaymentConfig />} />
+              <Route path="newpayment" element={<NewPayment />} />
+              <Route path="globalcasting" element={<GlobalCasting />} />
+              <Route path="globalform" element={<GlobalForm />} />
+              <Route path="globalsetting" element={<GlobalSetting />} />
+              <Route path="globalsettingform" element={<GlobalSettingForm />} />
+              <Route path="pms" element={<Pms />} />
+              <Route path="frequnceytemplateslist" element={<FrequnceyTemplateList />} />
+              <Route path="frequnceyform" element={<FrequnceyForm />} />
+              <Route path="scheduling" element={<Scheduling />} />
+              <Route path="schedulingform" element={<SchedulingForm />} />
+              <Route path="externallist" element={<ExternalList />} />
+              <Route path="externalform" element={<ExternalForm />} />
+              <Route path="modulestage" element={<ModuleStage />} />
+              <Route path="roter" element={<Roter />} />
+              <Route path="stageform2" element={<StageForm2 />} />
+              <Route path="mobileconfig" element={<MobileConfig />} />
+              <Route path="newconfigroter" element={<NewConfigRoter />} />
+              <Route path="emailsetting" element={<EmailSetting />} />
+              <Route path="mailaddress" element={<MailAddress />} />
+              <Route path="newmailaddress" element={<NewMailAddress />} />
+              <Route path="emailfooter" element={<EmailFooter />} />
+              <Route path="footerform" element={<FooterForm />} />
+              <Route path="webaction" element={<WebAction />} />
+              <Route path="webactionform" element={<WebActionForm />} />
+              <Route path="manageapplication" element={<ManageApplication />} />
+              <Route path="newapplicationform" element={<NewApplicatinForm />} />
+              <Route path="externalreport" element={<ExternalReport />} />
+              <Route path="externalreportform" element={<ExternalReportForm />} />
+              <Route path="managesub" element={<ManageSub />} />
+              <Route path="managesubform" element={<ManageSubForm />} />
+              <Route path="surveylist" element={<SurveyList />} />
+              <Route path="surveyform" element={<SurveyForm />} />
+              <Route path="newsurveyass" element={<NewSurveyAss />} />
+              <Route path="newsurveyassform" element={<NewSurveyAssForm />} />
+              <Route path="import" element={<Import />} />
+              <Route path="importform" element={<ImportForm />} />
+              <Route path="masstrasfer" element={<MassTrasfer />} />
+              <Route path="massform" element={<MassForm />} />
+              <Route path="resetcompanydata" element={<ResetCompanyData />} />
+              <Route path="newdatapolicy" element={<NewDataPolicy />} />
+              <Route path="newdatapolicyform" element={<NewDataPolicyForm />} />
+              <Route path="sales-and-marketing" element={<SaleMarketing />} />
+              <Route path="sales-and-marketing/target" element={<Target />} />
+              <Route path="sales-and-marketing/sales" element={<SalesCycle />} />
+              <Route path="sales-and-marketing/assignmentrules" element={<Target />} />
+              <Route path="sales-and-marketing/sales" element={<SalesCycle />} />
+              {/* Warehouse customize Kamran start here */}
+              <Route path="warehouse" element={<WareHouse />} />
+              <Route path="costumizefields" element={<CostumizeFields />} />
+              {/* Adil start here */}
+              <Route path="tenant" element={<Tenant />} />
+              <Route path="newTenant" element={<NewTenantform />} />
+              <Route path="selfService" element={<SelfService />} />
+              <Route path="usermanagement" element={<UserManagement />} />
+              <Route path="usermanagment/mainprofile" element={<MainProfile />} />
+              <Route path="usermanagment/newUser" element={<Newusers />} />
+              <Route path="usermanagment/teams" element={<Teams />} />
+              <Route path="usermanagment/newteam" element={<NewTeam />} />
+              <Route path="add-ons" element={<AddOns />} />
+              <Route path="sms-settings" element={<SMSSettings />} />
+              <Route path="sms-settings/new-sms" element={<NewSMS />} />
+              <Route path="registration-list" element={<Registration />} />
+              <Route path="registration-list/new-app-registration" element={<NewAppRegistration />} />
 
 
 
@@ -563,7 +563,7 @@ function App() {
               <Route path="tenant" element={<Tenant />} />
               <Route path="newTenant" element={<NewTenantform />} />
 
-
+              {/* up */}
               {/*  Adil   Module Customization */}
               <Route path="modulecustomization" element={<ModuleCustomization />} />
               { /* Seema Start here */}
