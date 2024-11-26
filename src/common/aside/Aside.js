@@ -83,6 +83,65 @@ function Aside({ showAsideBar }) {
     getMenusAllData();
   }, []);
 
+<<<<<<< HEAD
+=======
+
+  asideMenu = navigationData(countLaenData)
+
+  //  ------------------Navigation Data Apis------------
+
+  const getMensAllData = async () => {
+    try {
+      const menusRes = await getMenusdata()
+      setMainMenus(menusRes?.data)
+    } catch (error) {
+      alert(error?.message)
+    }
+  }
+
+  const mainMenu = [
+      {uniqueId: 1, id: 1, title: "project",
+        subMenu : [{title : "project", id: "11", uniqueId: "11", path: "project"}]
+      },
+      {uniqueId: 2, id: 2, title: "Company Setting",
+        subMenu : [
+            {title : "Company Information", id: "22", uniqueId: "22", path: "company-information"},
+            {title : "Fiscal Year", id: "222", uniqueId: "222", path: "fiscal-year"},
+            {title : "currencies", id: "333", uniqueId: "333", path: "currencies"},
+            {title : "calendar", id: "444", uniqueId: "444", path: "calendar-list"},
+            {title : "ManageCurrencies", id: "555", uniqueId: "555", path: "manage-currencies"},
+            {title : "currency exchange", id: "666", uniqueId: "666", path: "currency-exchange"},
+            {title : "rename modules", id: "777", uniqueId: "7777", path: "rename-modules"},
+            {title : "rename applications", id: "888", uniqueId: "888", path: "rename-applications"},
+            {title : "rename view groups", id: "999", uniqueId: "999", path: "rename-view-groups"},
+          ]
+      },
+  ]
+
+  useEffect(() => {
+   
+    getCountData()
+    const modifiedPath = location.pathname.replace("/", "");
+
+    const foundSubMenu = asideMenu
+      .flatMap((item) => item?.subMenus || [])
+      .find((submenu) => submenu.path === modifiedPath);
+
+    if (foundSubMenu) {
+      setChildId(foundSubMenu.uniqueId);
+      const parentItem = asideMenu.find((item) =>
+        item.subMenus?.includes(foundSubMenu)
+      );
+      if (parentItem) {
+        setParentId(parentItem.uniqueId);
+      }
+    }
+  }, []);
+  useEffect(() => {
+    getMensAllData()
+    setTokenUpdated(location.state)
+  }, [])
+>>>>>>> 499090c3109a72916646a19ecbcef12f5b642ed5
   return (
     <div className={`deznav ${!showAsideBar ? "showMenu" : "hideMenu"}`} id="abcd">
       <div className="deznav-scroll d-flex flex-column justify-content-between h-100">
