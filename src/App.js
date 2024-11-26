@@ -146,6 +146,11 @@ import NewSMS from "./components/add-onsmain/new-sms";
 import NewAppRegistration from "./components/add-onsmain/new-app-registration";
 import Registration from "./components/add-onsmain/registration-list";
 import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
+import FormTable from "./components/accounttravel/balanceaccount";
+import BalanceTravel from "./components/accounttravel/blancebank";
+import Travelsbalnce from "./components/accounttravel/trialbalancetravel.js/trialbalance";
+import ProfitLossTravels from "./components/accounttravel/profittravel/Profit&Loss";
+import Folloup from "./components/crm/Follouptravel";
 
 
 //---------------------JUNAID IMPORT END --------------------------
@@ -158,7 +163,7 @@ function App() {
 
   useEffect(() => {
     // console.log(getToken());
-    requestPermissions();
+    // requestPermissions();
     if (getToken2()) {
       dispatch(setIsLogin({ isLogin: true }));
       navigate(location?.pathname);
@@ -171,39 +176,39 @@ function App() {
 
   const [tokenNoti, setokenNoti] = useState(null);
 
-  const sendNotification2 = async (token) => {
-    try {
-      let result = await sendNotification({ type: "Browser", token: token });
-    } catch (error) {}
-  };
+  // const sendNotification2 = async (token) => {
+  //   try {
+  //     let result = await sendNotification({ type: "Browser", token: token });
+  //   } catch (error) {}
+  // };
 
-  async function requestPermissions() {
-    Notification.requestPermission().then((permission) => {
-      if (permission === "granted") {
-        getToken(messaging, {
-          vapidKey:
-            "BPmnN4enu6SLX6ASW7dctK6Q0j3GnTUhL5ZRi16I6RDqGav4khN2JIHmdKcL4eTqwRBu-PWmaUa1G-Oaor7AcF4",
-        })
-          .then((currentToken) => {
-            if (currentToken) {
-              console.log("Got FCM device token:", currentToken);
-              setokenNoti(currentToken);
-              if (isLogin) {
-                sendNotification2(currentToken);
-              }
-              // Send the token to your server or display it on the UI
-            } else {
-              console.log(
-                "No registration token available. Request permission to generate one."
-              );
-            }
-          })
-          .catch((err) => {
-            console.log("An error occurred while retrieving token. ", err);
-          });
-      }
-    });
-  }
+  // async function requestPermissions() {
+  //   Notification.requestPermission().then((permission) => {
+  //     if (permission === "granted") {
+  //       getToken(messaging, {
+  //         vapidKey:
+  //           "BPmnN4enu6SLX6ASW7dctK6Q0j3GnTUhL5ZRi16I6RDqGav4khN2JIHmdKcL4eTqwRBu-PWmaUa1G-Oaor7AcF4",
+  //       })
+  //         .then((currentToken) => {
+  //           if (currentToken) {
+  //             console.log("Got FCM device token:", currentToken);
+  //             setokenNoti(currentToken);
+  //             if (isLogin) {
+  //               sendNotification2(currentToken);
+  //             }
+  //             // Send the token to your server or display it on the UI
+  //           } else {
+  //             console.log(
+  //               "No registration token available. Request permission to generate one."
+  //             );
+  //           }
+  //         })
+  //         .catch((err) => {
+  //           console.log("An error occurred while retrieving token. ", err);
+  //         });
+  //     }
+  //   });
+  // }
 
   return (
     <>
@@ -279,22 +284,22 @@ function App() {
               <Route path="productlist" element={<ProductList />} />
               <Route path="dailyproduction" element={<DailyProduction />} />
 
-              <Route path="rems-status" element={<REMSstatus />} />  
-              <Route path="editpms" element={<EditPMSenquary />} />  
-              <Route path="editbooking" element={<Editbooking />} />  
-              <Route path="reportdate" element={<ReportData />} />  
-              <Route path="bookingstatus" element={<BookingStatus />} />  
-              <Route path="property" element={<PropertyHome />} />  
-              <Route path="newproperty" element={<CreateProperty />} />  
-              <Route path="newproperty/:id" element={<CreateProperty />} />  
-              <Route path="campaings" element={<Compaigs />} />  
-              <Route path="newcompaigs" element={<NEwCampaigs />} />  
-              <Route path="bookingsnap" element={<BookingSnap />} />  
-              <Route path="ventures" element={<Ventures />} />  
+              <Route path="rems-status" element={<REMSstatus />} />
+              <Route path="editpms" element={<EditPMSenquary />} />
+              <Route path="editbooking" element={<Editbooking />} />
+              <Route path="reportdate" element={<ReportData />} />
+              <Route path="bookingstatus" element={<BookingStatus />} />
+              <Route path="property" element={<PropertyHome />} />
+              <Route path="newproperty" element={<CreateProperty />} />
+              <Route path="newproperty/:id" element={<CreateProperty />} />
+              <Route path="campaings" element={<Compaigs />} />
+              <Route path="newcompaigs" element={<NEwCampaigs />} />
+              <Route path="bookingsnap" element={<BookingSnap />} />
+              <Route path="ventures" element={<Ventures />} />
               <Route path="newventures" element={<Newventures />} />
               <Route path="newventures/:id" element={<Newventures />} />
               <Route path="floor" element={<Floor />} />
-              <Route path="newfloor" element={<NewFloor />} /> 
+              <Route path="newfloor" element={<NewFloor />} />
               <Route path="block" element={<Block />} />
               <Route path="newblock" element={<NewBlock />} />
               <Route path="newblock/:id" element={<NewBlock />} />
@@ -315,7 +320,7 @@ function App() {
               <Route path="propertystagesplane" element={<PropertyStagePlane />} />
               <Route path="newpropertystagesplane" element={<CreateStageplan />} />
               <Route path="newpropertystagesplane/:id" element={<CreateStageplan />} />
-              
+
               <Route path="propertydetail" element={<PropertyDetail />} />
               <Route path="reporthome" element={<ReportHome />} />
               <Route path="newreport" element={<CreateReport />} />
@@ -340,9 +345,24 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
 
-              
+
               <Route path="*" element={<PageNotFound />} />
 
+
+              {/* Adil start here */}
+              <Route path="tenant" element={<Tenant />} />
+              <Route path="newTenant" element={<NewTenantform />} />
+              <Route path="selfService" element={<SelfService />} />
+              <Route path="usermanagement" element={<UserManagement />} />
+              <Route path="usermanagment/mainprofile" element={<MainProfile />} />
+              <Route path="usermanagment/newUser" element={<Newusers />} />
+              <Route path="usermanagment/teams" element={<Teams />} />
+              <Route path="usermanagment/newteam" element={<NewTeam />} />
+              <Route path="add-ons" element={<AddOns />} />
+              <Route path="sms-settings" element={<SMSSettings />} />
+              <Route path="sms-settings/new-sms" element={<NewSMS />} />
+              <Route path="registration-list" element={<Registration />} />
+              <Route path="registration-list/new-app-registration" element={<NewAppRegistration />} />
               {/* Advanced Settings */}
               <Route path="company-setting-main" element={<CompanyuSettingMian />} />
               <Route path="company-information" element={<CompanyInformationForm />} />
@@ -384,13 +404,20 @@ function App() {
               <Route path="newTenant" element={<NewTenantform />} />
 
 
-             {/*  Adil   Module Customization */}
-             <Route path="modulecustomization" element={<ModuleCustomization/>} />
+              {/*  Adil   Module Customization */}
+              <Route path="modulecustomization" element={<ModuleCustomization />} />
+              { /* Seema Start here */}
+              <Route path="blancebank" element={<BalanceTravel />} />
+              <Route path="trialbalance" element={< Travelsbalnce />} />
+              <Route path="profittravel" element={<ProfitLossTravels />} />
+              <Route path="Follouptravels" element={<Folloup />} />
             </Route>
+
+
           </>
         )}
       </Routes>
-    </> 
+    </>
   );
 }
 
