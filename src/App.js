@@ -123,12 +123,6 @@ import SocialApp from "./pages/kamran/SocialApp";
 import MyCurrentUser from "./pages/kamran/MyCurrentUser";
 import AccessM from "./pages/kamran/AccessM";
 import NewProfile from "./pages/kamran/NewProfile";
-import Market from "./pages/kamran/Market";
-import Sales from "./pages/kamran/Sales";
-import Master from "./pages/kamran/Master";
-import ECommerce from "./pages/kamran/ECommerce";
-import Leasing from "./pages/kamran/Leasing";
-import Role from "./pages/kamran/Role";
 import Desgination from "./pages/kamran/Desgination";
 import AccessManagment from "./pages/kamran/AccessManagment";
 import CurrentUser from "./pages/kamran/CurrentUser";
@@ -167,6 +161,31 @@ import EmailFooter from "./pages/kamran/AdvanceSetting/EmailFooter";
 import FooterForm from "./pages/kamran/AdvanceSetting/FooterForm";
 import WebAction from "./pages/kamran/AdvanceSetting/WebAction";
 import WebActionForm from "./pages/kamran/AdvanceSetting/WebActionForm";
+import ManageApplication from "./pages/kamran/AdvanceSetting/ManageApplication";
+import NewApplicatinForm from "./pages/kamran/AdvanceSetting/NewApplicatinForm";
+import ExternalReport from "./pages/kamran/AdvanceSetting/ExternalReport";
+import ExternalReportForm from "./pages/kamran/AdvanceSetting/ExternalReportForm";
+import ManageSub from "./pages/kamran/AdvanceSetting/ManageSub";
+import ManageSubForm from "./pages/kamran/AdvanceSetting/ManageSubForm";
+import SurveyList from "./pages/kamran/AdvanceSetting/SurveyList";
+import SurveyForm from "./pages/kamran/AdvanceSetting/SurveyForm";
+import NewSurveyAss from "./pages/kamran/AdvanceSetting/NewSurveyAss";
+import NewSurveyAssForm from "./pages/kamran/AdvanceSetting/NewSurveyAssForm";
+import Import from "./pages/kamran/AdvanceSetting/DataManagment/Import";
+import ImportForm from "./pages/kamran/AdvanceSetting/DataManagment/ImportForm";
+import MassTrasfer from "./pages/kamran/AdvanceSetting/DataManagment/MassTrasfer";
+import MassForm from "./pages/kamran/AdvanceSetting/DataManagment/MassForm";
+import ResetCompanyData from "./pages/kamran/AdvanceSetting/DataManagment/ResetCompanyData";
+import NewDataPolicy from "./pages/kamran/AdvanceSetting/DataManagment/NewDataPolicy";
+import NewDataPolicyForm from "./pages/kamran/AdvanceSetting/DataManagment/NewDataPolicyForm";
+import WareHouse from "./pages/kamran/WareHouse/WareHouse";
+import CostumizeFields from "./pages/kamran/WareHouse/CostumizeFields";
+import PropertyMarketing from "./pages/kamran/AdvanceSetting/Property-Marketing";
+import SaleMarketing from "./pages/kamran/AdvanceSetting/DataManagment/SaleMarketing";
+import { Tag } from "antd";
+import Target from "./components/kamran/AdvanceSetting/SalesMarketing/Target";
+import SalesCycle from "./components/kamran/AdvanceSetting/SalesMarketing/SalesCycle";
+
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -382,16 +401,14 @@ function App() {
               <Route path= "reminder" element={<Reminder/>} />
               <Route path= "reminder" element={<ReminderList/>} />
               <Route path= "socialapp" element={<SocialApp/>} />
-              {/*  <Route path= "newprofile" element={<NewProfile/>} />
+
+              
+               <Route path= "newprofile" element={<NewProfile/>} />
               <Route path= "accessm" element={<AccessM/>} />
-              <Route path= "market" element={<Market/>} />
-              <Route path= "sales" element={<Sales/>} />
-              <Route path= "master" element={<Master/>} />
-              <Route path= "ecommerce" element={<ECommerce/>} />
-              <Route path= "Leasing" element={<Leasing/>} />
-              <Route path= "accessmanagment" element={<AccessManagment/>} />*/ }
-               <Route path= "currentuser" element={<CurrentUser/>} />
+              <Route path= "accessmanagment" element={<AccessManagment/>} />
+              <Route path= "property-marketing" element={<PropertyMarketing/>} />
                 {/*Advance Setting */ }
+                <Route path= "currentuser" element={<CurrentUser/>} />
                <Route path= "workflow" element={<WorkFlow/>} />
                <Route path= "workform" element={<WorkForm/>} />
                <Route path= "worklog" element={<WorkLog/>} />
@@ -423,6 +440,31 @@ function App() {
                <Route path="footerform" element={<FooterForm/>}/>
                <Route path="webaction" element={<WebAction/>}/>
                <Route path="webactionform" element={<WebActionForm/>}/>
+               <Route path="manageapplication" element={<ManageApplication/>}/>
+               <Route path="newapplicationform" element={<NewApplicatinForm/>}/>
+               <Route path="externalreport" element={<ExternalReport/>}/>
+               <Route path="externalreportform" element={<ExternalReportForm/>}/>
+               <Route path="managesub" element={<ManageSub/>}/>
+               <Route path="managesubform" element={<ManageSubForm/>}/>
+               <Route path="surveylist" element={<SurveyList/>}/>
+               <Route path="surveyform" element={<SurveyForm/>}/>
+               <Route path="newsurveyass" element={<NewSurveyAss/>}/>
+               <Route path="newsurveyassform" element={<NewSurveyAssForm/>}/>
+               <Route path="import" element={<Import/>}/>
+               <Route path="importform" element={<ImportForm/>}/>
+               <Route path="masstrasfer" element={<MassTrasfer/>}/>
+               <Route path="massform" element={<MassForm/>}/>
+               <Route path="resetcompanydata" element={<ResetCompanyData/>}/>
+               <Route path="newdatapolicy" element={<NewDataPolicy/>}/>
+               <Route path="newdatapolicyform" element={<NewDataPolicyForm/>}/>
+               <Route path="sales-and-marketing" element={<SaleMarketing/>}/>
+               <Route path="sales-and-marketing/target" element={<Target/>}/>
+               <Route path="sales-and-marketing/sales" element={<SalesCycle/>}/>
+               <Route path="sales-and-marketing/assignmentrules" element={<Target/>}/>
+               <Route path="sales-and-marketing/sales" element={<SalesCycle/>}/>
+             {/* Warehouse customize Kamran start here */ }
+             <Route path="warehouse" element={<WareHouse/>} />
+             <Route path="costumizefields" element={<CostumizeFields/>} />
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />

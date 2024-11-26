@@ -1,9 +1,8 @@
 import React from 'react'
 
-function Master() {
+function MarketListing() {
   return (
-    <div>
-       <div className='card'>
+    <div className='card'>
     <div className="mt-3">
         <table className="w-100">
           <tr className="p-1 bg-light">
@@ -31,7 +30,7 @@ function Master() {
             <td className="p-1">
 
             </td>
-            <td className='p-1'>Charges</td>
+            <td className='p-1'>Account</td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
             <label class="form-check-label" for="exampleCheck1"></label></td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
@@ -62,7 +61,7 @@ function Master() {
             <td className="p-1">
 
             </td>
-            <td className='p-1'>Booking Cancel</td>
+            <td className='p-1'>Announcements</td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
             <label class="form-check-label" for="exampleCheck1"></label></td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
@@ -93,7 +92,7 @@ function Master() {
             <td className="p-1">
 
             </td>
-            <td className='p-1'>Brokers</td>
+            <td className='p-1'>Calender</td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
             <label class="form-check-label" for="exampleCheck1"></label></td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
@@ -124,7 +123,7 @@ function Master() {
             <td className="p-1">
 
             </td>
-            <td className='p-1'>Blocks</td>
+            <td className='p-1'>Campaigns</td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
             <label class="form-check-label" for="exampleCheck1"></label></td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
@@ -155,7 +154,7 @@ function Master() {
             <td className="p-1">
 
             </td>
-            <td className='p-1'>Agent</td>
+            <td className='p-1'>Channel</td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
             <label class="form-check-label" for="exampleCheck1"></label></td>
             <td className='p-1'><input type="checkbox" class="form-check-input" id="exampleCheck1" />
@@ -184,9 +183,9 @@ function Master() {
         </table>
       </div>
       </div>
-   
-    </div>
+      
+    
   )
 }
 
-export default Master
+export default MarketListing

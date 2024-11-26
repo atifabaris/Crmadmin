@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-function Costume() {
+function ManageApplication() {
   return (
     <div className='card' style={{ marginTop: "10px", marginLeft: "4px", marginRight: "4px" }}>
       <div className='table-responsive active-projects style-1' >
-        <h3 className='tbl-caption text-light'>Custom Module Added
-          <Link className="btn btn-primary btn-sm" to="/costumeform" role="button" aria-controls="offcanvasExample">+ Module Added</Link></h3>
-       </div>
-       
+        <h3 className='tbl-caption text-light'>Manage Application List 
+    <Link className="btn btn-primary btn-sm" to="/newapplicationform" 
+    role="button" aria-controls="offcanvasExample">+ Manage Application Added</Link></h3>
+        {/* <button type="button" className="btn btn-secondary btn-sm" >
+                                        + Invite Employee
+                                    </button> */}
+      </div>
       <div className="mt-3">
         <table className="w-100">
           <tr className="p-1 bg-light">
@@ -43,4 +46,5 @@ function Costume() {
     </div>
   )
 }
-export default Costume
+
+export default ManageApplication
