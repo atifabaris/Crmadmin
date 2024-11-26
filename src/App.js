@@ -123,6 +123,11 @@ import NewSMS from "./components/add-onsmain/new-sms";
 import NewAppRegistration from "./components/add-onsmain/new-app-registration";
 import Registration from "./components/add-onsmain/registration-list";
 import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
+import FormTable from "./components/accounttravel/balanceaccount";
+import BalanceTravel from "./components/accounttravel/blancebank";
+import Travelsbalnce from "./components/accounttravel/trialbalancetravel.js/trialbalance";
+import ProfitLossTravels from "./components/accounttravel/profittravel/Profit&Loss";
+import Folloup from "./components/crm/Follouptravel";
 
 
 //---------------------JUNAID IMPORT END --------------------------
@@ -135,7 +140,7 @@ function App() {
 
   useEffect(() => {
     // console.log(getToken());
-    requestPermissions();
+    // requestPermissions();
     if (getToken2()) {
       dispatch(setIsLogin({ isLogin: true }));
       navigate(location?.pathname);
@@ -148,39 +153,39 @@ function App() {
 
   const [tokenNoti, setokenNoti] = useState(null);
 
-  const sendNotification2 = async (token) => {
-    try {
-      let result = await sendNotification({ type: "Browser", token: token });
-    } catch (error) {}
-  };
+  // const sendNotification2 = async (token) => {
+  //   try {
+  //     let result = await sendNotification({ type: "Browser", token: token });
+  //   } catch (error) {}
+  // };
 
-  async function requestPermissions() {
-    Notification.requestPermission().then((permission) => {
-      if (permission === "granted") {
-        getToken(messaging, {
-          vapidKey:
-            "BPmnN4enu6SLX6ASW7dctK6Q0j3GnTUhL5ZRi16I6RDqGav4khN2JIHmdKcL4eTqwRBu-PWmaUa1G-Oaor7AcF4",
-        })
-          .then((currentToken) => {
-            if (currentToken) {
-              console.log("Got FCM device token:", currentToken);
-              setokenNoti(currentToken);
-              if (isLogin) {
-                sendNotification2(currentToken);
-              }
-              // Send the token to your server or display it on the UI
-            } else {
-              console.log(
-                "No registration token available. Request permission to generate one."
-              );
-            }
-          })
-          .catch((err) => {
-            console.log("An error occurred while retrieving token. ", err);
-          });
-      }
-    });
-  }
+  // async function requestPermissions() {
+  //   Notification.requestPermission().then((permission) => {
+  //     if (permission === "granted") {
+  //       getToken(messaging, {
+  //         vapidKey:
+  //           "BPmnN4enu6SLX6ASW7dctK6Q0j3GnTUhL5ZRi16I6RDqGav4khN2JIHmdKcL4eTqwRBu-PWmaUa1G-Oaor7AcF4",
+  //       })
+  //         .then((currentToken) => {
+  //           if (currentToken) {
+  //             console.log("Got FCM device token:", currentToken);
+  //             setokenNoti(currentToken);
+  //             if (isLogin) {
+  //               sendNotification2(currentToken);
+  //             }
+  //             // Send the token to your server or display it on the UI
+  //           } else {
+  //             console.log(
+  //               "No registration token available. Request permission to generate one."
+  //             );
+  //           }
+  //         })
+  //         .catch((err) => {
+  //           console.log("An error occurred while retrieving token. ", err);
+  //         });
+  //     }
+  //   });
+  // }
 
   return (
     <>
@@ -342,7 +347,14 @@ function App() {
 
              {/*  Adil   Module Customization */}
              <Route path="modulecustomization" element={<ModuleCustomization/>} />
+             { /* Seema Start here */}
+           <Route path="blancebank" element={<BalanceTravel/>}/>
+           <Route path="trialbalance" element={< Travelsbalnce/>}/>
+           <Route path="profittravel" element={<ProfitLossTravels/>}/>
+           <Route path="Follouptravels" element={<Folloup/>}/>
             </Route>
+
+      
           </>
         )}
       </Routes>
