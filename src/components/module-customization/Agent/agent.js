@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Activities() {
+function Agent() {
   const [list, setList] = useState(0);
 
   const TabMarket = (num) => {
@@ -36,7 +36,7 @@ function Activities() {
     <div className="col-8">
       <div className="d-flex mt-1 gap-2">
         {/* Left Column */}
-        <h1>Customize Activities</h1>
+        <h1>Customize Agent</h1>
 
         <ul className="me-5">
           {leftColumn.map((item, i) => (
@@ -72,4 +72,4 @@ function Activities() {
   );
 }
 
-export default Activities;
+export default Agent;
