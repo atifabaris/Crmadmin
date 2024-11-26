@@ -24,10 +24,10 @@ function AddOns() {
                 ))}
             </ul>
 
-            {/* <div className={list === 0 ? "d-block" : "d-none"}><OutLooks /></div>
-            <div className={list === 1 ? "d-block" : "d-none"}><SMSSettings /></div>
-            <div className={list === 2 ? "d-block" : "d-none"}><OutLookingPlug /></div>
-            <div className={list === 3 ? "d-block" : "d-none"}><Registration /></div> */}
+        {/* <div className={list === 0 ? "d-block" : "d-none"}><OutLooks/></div>
+        <div className={list === 1 ? "d-block" : "d-none"}><SMSSettings/></div>
+        <div className={list === 2 ? "d-block" : "d-none"}><OutLookingPlug/></div>
+        <div className={list === 3 ? "d-block" : "d-none"}><Registration/></div> */}
 
 
         </div>
