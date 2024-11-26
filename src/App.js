@@ -110,7 +110,6 @@ import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/Tenant";
 import NewTenantform from "./pages/NewTenantform/NewTenant";
-<<<<<<< HEAD
 import AddMembers from "./pages/kamran/AddMembers";
 import CalenderSharning from "./pages/kamran/CalenderSharning";
 import ChangeDisplay from "./pages/kamran/ChangeDisplay";
@@ -186,7 +185,6 @@ import SaleMarketing from "./pages/kamran/AdvanceSetting/DataManagment/SaleMarke
 import { Tag } from "antd";
 import Target from "./components/kamran/AdvanceSetting/SalesMarketing/Target";
 import SalesCycle from "./components/kamran/AdvanceSetting/SalesMarketing/SalesCycle";
-=======
 import PlanDetailUpgrade from "./pages/planDetailUpgrade";
 import DataManagement from "./pages/dataManagement";
 // import CompanySetting from "./pages/companySetting";
@@ -228,7 +226,6 @@ import BalanceTravel from "./components/accounttravel/blancebank";
 import Travelsbalnce from "./components/accounttravel/trialbalancetravel.js/trialbalance";
 import ProfitLossTravels from "./components/accounttravel/profittravel/Profit&Loss";
 import Folloup from "./components/crm/Follouptravel";
->>>>>>> 499090c3109a72916646a19ecbcef12f5b642ed5
 
 
 //---------------------JUNAID IMPORT END --------------------------
@@ -460,7 +457,6 @@ function App() {
               <Route path="email-templates" element={<EmailTemplates />} />
               <Route path="edit-email-templates" element={<EditEmailTemplates />} />
               
-<<<<<<< HEAD
             
               {/*------------Kamran-----------*/}
               <Route path="list" element={<List />} />
@@ -546,8 +542,6 @@ function App() {
              {/* Warehouse customize Kamran start here */ }
              <Route path="warehouse" element={<WareHouse/>} />
              <Route path="costumizefields" element={<CostumizeFields/>} />
-=======
->>>>>>> 499090c3109a72916646a19ecbcef12f5b642ed5
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
              <Route path="newTenant" element={<NewTenantform/>} />
