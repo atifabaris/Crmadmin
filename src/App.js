@@ -261,22 +261,22 @@ function App() {
               <Route path="productlist" element={<ProductList />} />
               <Route path="dailyproduction" element={<DailyProduction />} />
 
-              <Route path="rems-status" element={<REMSstatus />} />  
-              <Route path="editpms" element={<EditPMSenquary />} />  
-              <Route path="editbooking" element={<Editbooking />} />  
-              <Route path="reportdate" element={<ReportData />} />  
-              <Route path="bookingstatus" element={<BookingStatus />} />  
-              <Route path="property" element={<PropertyHome />} />  
-              <Route path="newproperty" element={<CreateProperty />} />  
-              <Route path="newproperty/:id" element={<CreateProperty />} />  
-              <Route path="campaings" element={<Compaigs />} />  
-              <Route path="newcompaigs" element={<NEwCampaigs />} />  
-              <Route path="bookingsnap" element={<BookingSnap />} />  
-              <Route path="ventures" element={<Ventures />} />  
+              <Route path="rems-status" element={<REMSstatus />} />
+              <Route path="editpms" element={<EditPMSenquary />} />
+              <Route path="editbooking" element={<Editbooking />} />
+              <Route path="reportdate" element={<ReportData />} />
+              <Route path="bookingstatus" element={<BookingStatus />} />
+              <Route path="property" element={<PropertyHome />} />
+              <Route path="newproperty" element={<CreateProperty />} />
+              <Route path="newproperty/:id" element={<CreateProperty />} />
+              <Route path="campaings" element={<Compaigs />} />
+              <Route path="newcompaigs" element={<NEwCampaigs />} />
+              <Route path="bookingsnap" element={<BookingSnap />} />
+              <Route path="ventures" element={<Ventures />} />
               <Route path="newventures" element={<Newventures />} />
               <Route path="newventures/:id" element={<Newventures />} />
               <Route path="floor" element={<Floor />} />
-              <Route path="newfloor" element={<NewFloor />} /> 
+              <Route path="newfloor" element={<NewFloor />} />
               <Route path="block" element={<Block />} />
               <Route path="newblock" element={<NewBlock />} />
               <Route path="newblock/:id" element={<NewBlock />} />
@@ -297,7 +297,7 @@ function App() {
               <Route path="propertystagesplane" element={<PropertyStagePlane />} />
               <Route path="newpropertystagesplane" element={<CreateStageplan />} />
               <Route path="newpropertystagesplane/:id" element={<CreateStageplan />} />
-              
+
               <Route path="propertydetail" element={<PropertyDetail />} />
               <Route path="reporthome" element={<ReportHome />} />
               <Route path="newreport" element={<CreateReport />} />
@@ -322,43 +322,43 @@ function App() {
               {/* -----------------junaid"s Route Start End-w-------- */}
               {/* -----------------junaid"s Route Start End-w-------- */}
 
-              
+
               <Route path="*" element={<PageNotFound />} />
 
-              
-             {/* Adil start here */ }
-             <Route path="tenant" element={<Tenant/>} />
-             <Route path="newTenant" element={<NewTenantform/>} />
-             <Route path="selfService" element={<SelfService/>} />
-             <Route path="usermanagement" element={<UserManagement/>} />
-             <Route path="usermanagment/mainprofile" element={<MainProfile/>} />
-             <Route path="usermanagment/newUser" element={<Newusers/>} />
-             <Route path="usermanagment/teams" element={<Teams/>} />
-             <Route path="usermanagment/newteam" element={<NewTeam/>} />
-             <Route path="add-ons" element={<AddOns/>} />
-             <Route path="sms-settings" element={<SMSSettings/>} />
-             <Route path="sms-settings/new-sms" element={<NewSMS/>} />
-             <Route path="registration-list" element={<Registration/>} />
-             <Route path="registration-list/new-app-registration" element={<NewAppRegistration/>} />
+
+              {/* Adil start here */}
+              <Route path="tenant" element={<Tenant />} />
+              <Route path="newTenant" element={<NewTenantform />} />
+              <Route path="selfService" element={<SelfService />} />
+              <Route path="usermanagement" element={<UserManagement />} />
+              <Route path="usermanagment/mainprofile" element={<MainProfile />} />
+              <Route path="usermanagment/newUser" element={<Newusers />} />
+              <Route path="usermanagment/teams" element={<Teams />} />
+              <Route path="usermanagment/newteam" element={<NewTeam />} />
+              <Route path="add-ons" element={<AddOns />} />
+              <Route path="sms-settings" element={<SMSSettings />} />
+              <Route path="sms-settings/new-sms" element={<NewSMS />} />
+              <Route path="registration-list" element={<Registration />} />
+              <Route path="registration-list/new-app-registration" element={<NewAppRegistration />} />
 
 
 
 
 
-             {/*  Adil   Module Customization */}
-             <Route path="modulecustomization" element={<ModuleCustomization/>} />
-             { /* Seema Start here */}
-           <Route path="blancebank" element={<BalanceTravel/>}/>
-           <Route path="trialbalance" element={< Travelsbalnce/>}/>
-           <Route path="profittravel" element={<ProfitLossTravels/>}/>
-           <Route path="Follouptravels" element={<Folloup/>}/>
+              {/*  Adil   Module Customization */}
+              <Route path="modulecustomization" element={<ModuleCustomization />} />
+              { /* Seema Start here */}
+              <Route path="blancebank" element={<BalanceTravel />} />
+              <Route path="trialbalance" element={< Travelsbalnce />} />
+              <Route path="profittravel" element={<ProfitLossTravels />} />
+              <Route path="Follouptravels" element={<Folloup />} />
             </Route>
 
-      
+
           </>
         )}
       </Routes>
-    </> 
+    </>
   );
 }
 
