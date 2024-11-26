@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import MarketListing from '../../components/kamran/MarketListing';
+
 
 function NewProfile() {
+    const [profile, setProfile] = useState (0);
+
+    const profileHandle = (num) => {
+        setProfile (num)
+    }
+
     return (
         <div className='card'>
             <div className='table-responsive active-projects style-1'>
@@ -20,22 +28,42 @@ function NewProfile() {
             <h6 className='border-bottom'>Module Access Rights</h6>
             <div className=''>
                 <div>
-                    <ul className='border-bottom'>
-                    <Link className="btn btn-outline-primary btn-sm-" to="/market" role="button" 
-                    aria-controls="offcanvasExample">Marketing</Link>
-                     <Link className="btn btn-outline-primary btn-sm" to="/sales" role="button" 
-                    aria-controls="offcanvasExample">Sales</Link>
-                     <Link className="btn btn-outline-primary btn-sm" to="/master" role="button" 
-                    aria-controls="offcanvasExample">Master</Link>
-                     <Link className="btn btn-outline-primary btn-sm" to="/ecommerce" role="button" 
-                    aria-controls="offcanvasExample">E-Commerce</Link>
-                     <Link className="btn btn-outline-primary btn-sm" to="/leasing" role="button" 
-                    aria-controls="offcanvasExample">Leasing</Link>
-                    
+                    <ul className='d-flex'>
+                        <li className=''onClick={()=>profileHandle(0)}>
+                        <button type='button'className={`btn m-0 ${profile === 0 ?
+             'btn-primary' : 'btn-outline-primary'
+              } rounded-0`}>Marketing</button>
+                        </li>
+                   <li className=''onClick={()=> profileHandle(1)}>
+                   <button type='button'className={`btn m-0 ${profile === 1 ?
+             'btn-primary' : 'btn-outline-primary'
+              } rounded-0`}>Sales</button>
+                   </li>
+                    <li className=''onClick={()=>profileHandle(2)}>
+                    <button type='button'className={`btn m-0 ${profile === 2 ?
+             'btn-primary' : 'btn-outline-primary'
+              } rounded-0`}>Master</button>
+                    </li>
+                    <li className=''onClick={()=> profileHandle(3)}>
+                    <button type='button'className={`btn m-0 ${profile === 3 ?
+             'btn-primary' : 'btn-outline-primary'
+              } rounded-0`}>E-Commerce</button>
+                       </li>
+                    <li className=''onClick={()=>profileHandle(4)}>
+                    <button type='button'className={`btn m-0 ${profile === 4 ?
+             'btn-primary' : 'btn-outline-primary'
+              } rounded-0`}>Leasing</button>
+                    </li>
                     </ul>
                 </div>
             </div>
-           
+           <div className={profile === 0 ? "d-block" : "d-none"}>
+<MarketListing/>
+           </div>
+           <div className={profile === 1 ? "d-block" : "d-none"}><MarketListing/></div>
+           <div className={profile === 2 ? "d-block" : "d-none"}><MarketListing/></div>
+           <div className={profile === 3 ? "d-block" : "d-none"}><MarketListing/></div>
+           <div className={profile === 4 ? "d-block" : "d-none"}><MarketListing/></div>
         </div>
     )
 }
