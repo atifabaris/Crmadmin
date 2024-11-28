@@ -98,7 +98,6 @@ import BookingCancel from "./pages/kamran/BookingCancel";
 import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
 import { Tenant } from "./pages/adil/tenant-selling";
-import NewTenantform from "./pages/NewTenantform/newtenant";
 import AddMembers from "./pages/kamran/AddMembers";
 import CalenderSharning from "./pages/kamran/CalenderSharning";
 import ChangeDisplay from "./pages/kamran/ChangeDisplay";
@@ -219,7 +218,6 @@ import LookIn from "./components/rems-status/lookin";
 import StanderLayout from "./components/rems-status/tenantlayout";
 import PropertyEdit from "./components/rems-status/NewForms/propertyedit";
 import VarturesTenant from "./components/rems-status/NewForms/varturestenant";
-import TenantForm from "./pages/NewTenantform/tenantform";
 import SelfServiceUsers from "./components/selfServicePages/selfServiceUsers/selfserviceusers";
 import AccessSettings from "./components/selfServicePages/accessSettings/accesssetting";
 import ModuleMappings from "./components/selfServicePages/moduleMappings/modulemappings";
@@ -243,6 +241,12 @@ import ModuleRestrictions from "./pages/newusers/modulerestrictions";
 import SocialInfo from "./pages/newusers/socialinfo";
 import OutLooks from "./components/add-onsmain/outlookintegration";
 import OutLookingPlug from "./components/add-onsmain/outlook-plug";
+import TenantForm from "./pages/NewTenents/tenantform";
+
+
+
+
+
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -552,8 +556,8 @@ function App() {
 
 
               {/* Adil start here */}
-              <Route path="tenant" element={<Tenant />} />
-              <Route path="newtenant" element={<NewTenantform />} />
+              <Route path="tenant-selling" element={<Tenant />} />
+              {/* <Route path="newtenant" element={<NewTenantform/>} /> */}
               <Route path="selfservice" element={<SelfService />} />
               <Route path="usermanagment/newUser" element={<Newusers />} />
               <Route path="usermanagment/teams" element={<Teams />} />
@@ -565,7 +569,7 @@ function App() {
               <Route path="tenantlayout" element={<StanderLayout />} />
               <Route path="propertyedit" element={<PropertyEdit />} />
               <Route path="varturestenant" element={<VarturesTenant />} />
-              <Route path="tenantform" element={<TenantForm />} />
+              <Route path="tenantform" element={<TenantForm/>} />
               {/* SelfService */}
               <Route path="selfserviceusers" element={<SelfServiceUsers />} />
               <Route path="accesssetting" element={<AccessSettings />} />
