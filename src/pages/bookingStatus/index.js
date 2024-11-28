@@ -1,5 +1,5 @@
 import React from "react";
-import PSMunit from "../../components/rems-status/PSMunit";
+import PSMunit from "../../components/rems-status/psmunit";
 import CheckBooking from "../../components/rems-status/CheckBooking";
 import Filter from "../../components/rems-status/Filter";
 import FilterShort from "../../components/rems-status/FilterShort";

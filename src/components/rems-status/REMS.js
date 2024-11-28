@@ -1,5 +1,5 @@
 import React from "react";
-import PSMunit from "./PSMunit";
+import PSMunit from "./psmunit";
 import Views from "./Views";
 import Records from "./Records";
 import RecordsFiles from "./RecordsFile";

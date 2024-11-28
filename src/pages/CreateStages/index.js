@@ -1,5 +1,5 @@
 import React from "react";
-import PSMunit from "../../components/rems-status/PSMunit";
+import PSMunit from "../../components/rems-status/psmunit";
 import SaveCancle from "../../components/rems-status/SaveCancle";
 import StagesForm from "../../components/rems-status/NewForms/StageForm";
 import PropertyStage from "./PropertyStage";

@@ -1,6 +1,6 @@
 import React from "react";
 import Views from "./Views";
-import PSMunit from "./PSMunit";
+import PSMunit from "./psmunit";
 import SaveCancle from "./SaveCancle";
 import FormPMSenquary from "./FormPMSenquary";
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import DesignationHierarchy from "../../components/userManagement/DesignationHierarchy/designation-hierarchy";
 import Profiles from "../../components/userManagement/Profiles/profiles";
-import Roles from "../../components/userManagement/Roles/Roles";
-import Teams from "../../components/userManagement/Teams/Teams";
-import Users from "../../components/userManagement/Users/user";
-import WhatsAppSupportAccount from "../../components/userManagement/WhatsAppSupportAccount/WhatsAppSupportAccount";
-import LoginHistory from "../../components/userManagement/LoginHistory/LoginHistory";
+import Roles from "../../components/userManagement/Roles/roles";
+import Teams from "../../components/userManagement/Teams/teams";
+import Users from "../../components/userManagement/Users/user-manager";
+import WhatsAppSupportAccount from "../../components/userManagement/WhatsAppSupportAccount/whatsApp-support-account-list";
+import LoginHistory from "../../components/userManagement/LoginHistory/login-history";
 
 
 

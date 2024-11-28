@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SelfServiceUsers from "../../components/selfServicePages/selfServiceUsers/selfServiceUsers";
-import AccessSettings from "../../components/selfServicePages/accessSettings/accessSetting";
-import ModuleMappings from "../../components/selfServicePages/moduleMappings/moduleMappings";
-import HomePageCustomization from "../../components/selfServicePages/homePageCustomization/homePageCustomization";
-import ThemesUi from "../../components/selfServicePages/themesUi/themesUi";
+import SelfServiceUsers from "../../components/selfServicePages/selfServiceUsers/selfserviceusers";
+import AccessSettings from "../../components/selfServicePages/accessSettings/accesssetting";
+import ModuleMappings from "../../components/selfServicePages/moduleMappings/modulemappings";
+import HomePageCustomization from "../../components/selfServicePages/homePageCustomization/homepagecustomization";
+import ThemesUi from "../../components/selfServicePages/themesUi/themesui";
 // import ThemeCollection from "../../components/selfServicePages/Themes/Themes";
 
 
