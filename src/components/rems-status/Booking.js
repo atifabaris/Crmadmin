@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PSMunit from "./PSMunit";
+import PSMunit from "./psmunit";
 import SaveCancle from "./SaveCancle";
 import BookingForm from "./BookingForm";
 import PaymentShedule from "./PaymentShedule";

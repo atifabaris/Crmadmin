@@ -1,5 +1,5 @@
 import React from "react";
-import PSMunit from "../../components/rems-status/PSMunit";
+import PSMunit from "../../components/rems-status/psmunit";
 import SaveCancle from "../../components/rems-status/SaveCancle";
 import VenturesForm from "../../components/rems-status/VenturesForm";
 import BlockForm from "./BlockForm";

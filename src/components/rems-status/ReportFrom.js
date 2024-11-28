@@ -1,5 +1,5 @@
 import React from "react";
-import PSMunit from "./PSMunit";
+import PSMunit from "./psmunit";
 import Filter from "./Filter";
 import OpertunityName from "./OpertunityName";
 import ReportTable from "./ReportTable";

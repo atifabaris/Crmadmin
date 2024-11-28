@@ -1,4 +1,4 @@
-import PSMunit from "../../components/rems-status/PSMunit";
+import PSMunit from "../../components/rems-status/psmunit";
 import SaveCancle from "../../components/rems-status/SaveCancle";
 import PropertychargesForm from "./PropertyChargesForm";
 

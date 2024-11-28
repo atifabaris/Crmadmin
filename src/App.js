@@ -97,8 +97,8 @@ import NewBooking from "./pages/kamran/NewBooking";
 import BookingCancel from "./pages/kamran/BookingCancel";
 import FormCancel from "./pages/kamran/FormCancel";
 import CoustumeModel from "./pages/kamran/CoustumeModel";
-import { Tenant } from "./pages/adil/Tenant";
-import NewTenantform from "./pages/NewTenantform/NewTenant";
+import { Tenant } from "./pages/adil/tenant-selling";
+import NewTenantform from "./pages/NewTenantform/newtenant";
 import AddMembers from "./pages/kamran/AddMembers";
 import CalenderSharning from "./pages/kamran/CalenderSharning";
 import ChangeDisplay from "./pages/kamran/ChangeDisplay";
@@ -197,12 +197,12 @@ import EditCalendar from "./components/administration/companySettingsMain/compan
 import CalendarList from "./components/administration/companySettingsMain/companyAccordianList/calendarList/CalendarList";
 import CompanyInformationForm from "./components/administration/companySettingsMain/companyAccordianList/companyInformation/companyInformationForm/CompanyInformationForm";
 
-import SelfService from "./pages/selfService";
-import UserManagement from "./pages/userManagement/userManagement"
-import { MainProfile } from "./pages/newProfile/main";
-import Newusers from "./components/userManagement/Users/newUser";
-import NewTeam from "./components/userManagement/Teams/NewTeam";
-import Teams from "./components/userManagement/Teams/Teams";
+import SelfService from "./pages/selfService/selfservice";
+import UserManagement from "./pages/userManagement/usermanagement"
+import { MainProfile } from "./pages/newProfile/profiles-managment";
+import Newusers from "./components/userManagement/Users/newuser";
+import NewTeam from "./components/userManagement/Teams/newteam";
+import Teams from "./components/userManagement/Teams/teams";
 import AddOns from "./pages/add-ons/add-ons";
 import SMSSettings from "./components/add-onsmain/sms-settings";
 import NewSMS from "./components/add-onsmain/new-sms";
@@ -214,6 +214,35 @@ import Travelsbalnce from "./components/accounttravel/trialbalancetravel.js/tria
 import ProfitLossTravels from "./components/accounttravel/profittravel/Profit&Loss";
 import Folloup from "./components/crm/Follouptravel";
 import PageNotFound from "./common/pageNotFound/PageNotFound";
+import PSMunit from "./components/rems-status/psmunit";
+import LookIn from "./components/rems-status/lookin";
+import StanderLayout from "./components/rems-status/tenantlayout";
+import PropertyEdit from "./components/rems-status/NewForms/propertyedit";
+import VarturesTenant from "./components/rems-status/NewForms/varturestenant";
+import TenantForm from "./pages/NewTenantform/tenantform";
+import SelfServiceUsers from "./components/selfServicePages/selfServiceUsers/selfserviceusers";
+import AccessSettings from "./components/selfServicePages/accessSettings/accesssetting";
+import ModuleMappings from "./components/selfServicePages/moduleMappings/modulemappings";
+import HomePageCustomization from "./components/selfServicePages/homePageCustomization/homepagecustomization";
+import ThemesUi from "./components/selfServicePages/themesUi/themesui";
+import DesignationHierarchy from "./components/userManagement/DesignationHierarchy/designation-hierarchy";
+import Profiles from "./pages/kamran/profiles";
+import Roles from "./components/userManagement/Roles/roles";
+import Users from "./components/userManagement/Users/user-manager";
+import LoginHistory from "./components/userManagement/LoginHistory/login-history";
+import WhatsAppSupportAccount from "./components/userManagement/WhatsAppSupportAccount/whatsApp-support-account-list";
+import Marketing from "./pages/newProfile/marketing";
+import Sales from "./pages/newProfile/sales";
+import Masters from "./pages/newProfile/masters";
+import Ecommerce from "./pages/newProfile/e-commerce";
+import Leasing from "./pages/newProfile/leasing";
+import { Genral } from "./pages/newusers/genral";
+import { Security } from "./pages/newusers/security";
+import Restrictions from "./pages/newusers/restrictions";
+import ModuleRestrictions from "./pages/newusers/modulerestrictions";
+import SocialInfo from "./pages/newusers/socialinfo";
+import OutLooks from "./components/add-onsmain/outlookintegration";
+import OutLookingPlug from "./components/add-onsmain/outlook-plug";
 
 //---------------------JUNAID IMPORT END --------------------------
 function App() {
@@ -411,20 +440,9 @@ function App() {
               <Route path="*" element={<PageNotFound/>} />
 
 
-              {/* Adil start here */}
-              <Route path="tenant" element={<Tenant />} />
-              <Route path="newTenant" element={<NewTenantform />} />
-              <Route path="selfService" element={<SelfService />} />
-              <Route path="usermanagement" element={<UserManagement />} />
-              <Route path="usermanagment/mainprofile" element={<MainProfile />} />
-              <Route path="usermanagment/newUser" element={<Newusers />} />
-              <Route path="usermanagment/teams" element={<Teams />} />
-              <Route path="usermanagment/newteam" element={<NewTeam />} />
-              <Route path="add-ons" element={<AddOns />} />
-              <Route path="sms-settings" element={<SMSSettings />} />
-              <Route path="sms-settings/new-sms" element={<NewSMS />} />
-              <Route path="registration-list" element={<Registration />} />
-              <Route path="registration-list/new-app-registration" element={<NewAppRegistration />} />
+              
+
+
               {/* Advanced Settings */}
               <Route path="company-setting-main" element={<CompanyuSettingMian />} />
               <Route path="company-information" element={<CompanyInformationForm />} />
@@ -529,29 +547,69 @@ function App() {
               {/* Warehouse customize Kamran start here */}
               <Route path="warehouse" element={<WareHouse />} />
               <Route path="costumizefields" element={<CostumizeFields />} />
+
+
+
+
               {/* Adil start here */}
               <Route path="tenant" element={<Tenant />} />
-              <Route path="newTenant" element={<NewTenantform />} />
-              <Route path="selfService" element={<SelfService />} />
-              <Route path="usermanagement" element={<UserManagement />} />
-              <Route path="usermanagment/mainprofile" element={<MainProfile />} />
+              <Route path="newtenant" element={<NewTenantform />} />
+              <Route path="selfservice" element={<SelfService />} />
               <Route path="usermanagment/newUser" element={<Newusers />} />
               <Route path="usermanagment/teams" element={<Teams />} />
               <Route path="usermanagment/newteam" element={<NewTeam />} />
               <Route path="add-ons" element={<AddOns />} />
-              <Route path="sms-settings" element={<SMSSettings />} />
-              <Route path="sms-settings/new-sms" element={<NewSMS />} />
-              <Route path="registration-list" element={<Registration />} />
-              <Route path="registration-list/new-app-registration" element={<NewAppRegistration />} />
+              {/* Tenant  */}
+              <Route path="psmunit" element={<PSMunit />} />
+              <Route path="lookin" element={<LookIn />} />
+              <Route path="tenantlayout" element={<StanderLayout />} />
+              <Route path="propertyedit" element={<PropertyEdit />} />
+              <Route path="varturestenant" element={<VarturesTenant />} />
+              <Route path="tenantform" element={<TenantForm />} />
+              {/* SelfService */}
+              <Route path="selfserviceusers" element={<SelfServiceUsers />} />
+              <Route path="accesssetting" element={<AccessSettings />} />
+              <Route path="modulemappings" element={<ModuleMappings />} />
+              <Route path="homepagecustomization" element={<HomePageCustomization />} />
+              <Route path="themesui" element={<ThemesUi />} />
+             {/* UserManagement */}
+             <Route path="usermanagement" element={<UserManagement />} />
+             <Route path="designation-hierarchy" element={<DesignationHierarchy />} />
+             <Route path="profiles" element={<Profiles />} />
+             <Route path="roles" element={<Roles />} />
+             <Route path="teams" element={<Teams />} />
+             <Route path="newteam" element={<Teams />} />
+             <Route path="user-manager" element={<Users />} />
+             <Route path="newuser" element={<Newusers />} />
+             <Route path="login-history" element={<LoginHistory />} />
+             <Route path="whatsApp-support-account-list" element={<WhatsAppSupportAccount />} />
+             <Route path="loginhistory" element={<LoginHistory />} />
+             <Route path="usermanagment/profiles-managment" element={<MainProfile />} />
+             {/* MainProfile */}
+             <Route path="marketing" element={<Marketing />} />
+             <Route path="sales" element={<Sales />} />
+             <Route path="masters" element={<Masters />} />
+             <Route path="e-commerce" element={<Ecommerce />} />
+             <Route path="leasing" element={<Leasing />} />
+              {/* Newusers */}
+              <Route path="genral" element={<Genral />} />
+              <Route path="security" element={<Security />} />
+              <Route path="restrictions" element={<Restrictions />} />
+              <Route path="modulerestrictions" element={<ModuleRestrictions />} />
+              <Route path="socialinfo" element={<SocialInfo />} />
+             {/* Add-ons */}
+             <Route path="outlookintegration" element={<OutLooks />} />
+             <Route path="sms-settings" element={<SMSSettings />} />
+             <Route path="new-sms" element={<NewSMS />} />
+             <Route path="outlook-plug" element={<OutLookingPlug />} />
+             <Route path="registration-list" element={<Registration />} />
+             <Route path="new-app-registration" element={<NewAppRegistration />} />
 
 
-
-              {/* Adil start here */}
-              <Route path="tenant" element={<Tenant />} />
-              <Route path="newTenant" element={<NewTenantform />} />
-
-              {/* up */}
               {/*  Adil   Module Customization */}
+
+
+              
               { /* Seema Start here */}
               <Route path="blancebank" element={<BalanceTravel />} />
               <Route path="trialbalance" element={< Travelsbalnce />} />

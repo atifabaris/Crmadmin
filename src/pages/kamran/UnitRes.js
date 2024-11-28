@@ -1,6 +1,6 @@
 import React from 'react'
 import Punit from '../../components/kamran/Punit'
-import LookIn from '../../components/rems-status/LookIn'
+import LookIn from '../../components/rems-status/lookin'
 import ViewDetails from '../../components/kamran/ViewDetails'
 import Alphabetic from '../../components/kamran/Alphabatic'
 import Adil from '../../common/kamran/Adil'

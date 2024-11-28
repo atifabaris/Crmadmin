@@ -7,7 +7,7 @@ import Calender from './Calender'
 import PropertyShowing from '../PropertyShowing'
 import PropertyFinal from './PropertyFinal'
 import BusninessOf from './BusninessOf'
-import Profiles from './Profiles'
+import Profiles from './profiles'
 
 function AccessManagment(){
     const [tab, setTab] = useState(0);
