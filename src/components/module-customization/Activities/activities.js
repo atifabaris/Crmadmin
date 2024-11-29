@@ -1,54 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-function Activities () {
+function Activities() {
+  const [list, setList] = useState(0);
 
-    return(
-        <div className='card'>
-        <div className='table-responsive active-projects style-1'>
-            <h2 className='tbl-caption text-light'>Designation Hierarchy
-            </h2>
-     {/* <button type="button" className="btn btn-secondary btn-sm" > + Invite Employee
-                                    </button> */}
-</div>
-<div className="mt-3">
-            <table className="w-100">
-                <tr className="p-1 bg-light">
-                    <th className="p-1">
-                    
-                   
-                    </th>
-                    <th className="p-1"></th>
-                    <th className="p-1"></th>
-                    <th className="p-1"></th>
-                    <th className="p-1"></th>
-                
-                </tr>
-                <tr className="border p-1">
-      
-        <td className="p-1">
-           
-        </td>
-    <td className='p-1'>Administrator</td>
-    <td className='p-1'>Admin Profile</td>
-    <td className='p-1'>Dharani</td>
-    <div>
-      <a className="btn btn-primary shadow btn-xs sharp me-1">
-      <i class="fa fa-pencil"> </i>
-        </a>
-        <a class="btn btn-danger shadow btn-xs sharp" >
-        <i class="fa fa-trash">
+  const TabMarket = (num) => {
+    setList(num);
+  };
 
-        </i>
-          </a>
+  // Items array
+  const items = [
+    "Customize Fields",
+    "Customize External Modules",
+    "Customize Page Layouts",
+    "Customize Print Layouts",
+    "Customize Cascading Pick List",
+    "Customize Labels",
+    "Customize Mapping Templates",
+    "Customize Apply Rules",
+    "Customize Home Layouts",
+    "Customize Business Card Layout",
+    "Customize Related Info Layouts",
+    "Customize Settings",
+    "Customize Duplicate Criteria Definition",
+    
+  ];
+
+  // Filter items that start with "Customize"
+  const filteredItems = items.filter((item) => item.startsWith("Customize"));
+
+  // Split filtered items into two columns
+  const leftColumn = filteredItems.slice(0, Math.ceil(filteredItems.length / 2));
+  const rightColumn = filteredItems.slice(Math.ceil(filteredItems.length / 2));
+
+  return (
+    <div className="col-8">
+      <div className="d-flex mt-1 gap-2">
+        {/* Left Column */}
+        <h1>Customize Activities</h1>
+
+        <ul className="me-5">
+          {leftColumn.map((item, i) => (
+            <li
+              key={i}
+              style={{ fontSize: "2rem" }}
+              className={list === i ? "text-success" : "text-black"}
+              onClick={() => TabMarket(i)}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+        {/* Right Column */}
+        <ul>
+          {rightColumn.map((item, i) => (
+            <li
+              key={i + leftColumn.length} // Ensure unique key
+              style={{ fontSize: "2rem" }}
+              className={list === i + leftColumn.length ? "text-success" : "text-black"}
+              onClick={() => TabMarket(i + leftColumn.length)}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Placeholder for content to toggle */}
+      {/* <div className={list === 0 ? "d-block" : "d-none"}><OutLooks/></div>
+          <div className={list === 1 ? "d-block" : "d-none"}><SMSSettings/></div> */}
     </div>
-        </tr>
-
-            </table>
-        </div>
-</div>
-
-    );
+  );
 }
 
 export default Activities;

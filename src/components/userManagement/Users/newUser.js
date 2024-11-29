@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Genral } from "../../../pages/newusers/genral";
 import { Security } from "../../../pages/newusers/security";
 import Restrictions from "../../../pages/newusers/restrictions";
-import ModuleRestrictions from "../../../pages/newusers/moduleRestrictions";
-import SocialInfo from "../../../pages/newusers/socialInfo";
+import ModuleRestrictions from "../../../pages/newusers/modulerestrictions";
+import SocialInfo from "../../../pages/newusers/socialinfo";
 
 function Newusers () { 
     

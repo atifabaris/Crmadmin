@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import OutLooks from "../../components/add-onsmain/out-looks";
+import OutLooks from "../../components/add-onsmain/outlookintegration";
 import OutlookPlug from "../../components/add-onsmain/outlook-plug";
 import Registration from "../../components/add-onsmain/registration-list";
 import SmsSettings from "../../components/add-onsmain/sms-settings";

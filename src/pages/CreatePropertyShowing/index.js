@@ -1,5 +1,5 @@
 import PropertychargesForm from "../../components/rems-status/NewForms/PropertychargesForm";
-import PSMunit from "../../components/rems-status/PSMunit";
+import PSMunit from "../../components/rems-status/psmunit";
 import SaveCancle from "../../components/rems-status/SaveCancle";
 import PropertyShowingForm from "./PropertyShowingForm";
 

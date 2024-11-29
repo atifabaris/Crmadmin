@@ -31,6 +31,7 @@ function FooterForm() {
             <label class="fw-normal" for="exampleCheck1">Active For Mass Mail</label>
  </div>
         </div>
+        
         <div className='mt-4'>
       <JoditEditor
 			ref={editor}

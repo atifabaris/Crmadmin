@@ -7,7 +7,7 @@ import Calender from './Calender'
 import PropertyShowing from '../PropertyShowing'
 import PropertyFinal from './PropertyFinal'
 import BusninessOf from './BusninessOf'
-import Profiles from './Profiles'
+import Profiles from './profiles'
 
 function AccessManagment(){
     const [tab, setTab] = useState(0);
@@ -31,14 +31,17 @@ const tabHandle = (num)=>{
     return (
         <div className="ServiceMenu container">
             <div className="row">
-                <div className="col-2">
+                <div className="col-2 border-none">
                     <ul className="list-group" >
                         <li className="list-group-item" onClick={() => tabHandle(0)}>Profiles</li>
-                        <li className="list-group-item" onClick={() => tabHandle(1)}>Profiles</li>
-                        <li className="list-group-item" onClick={() => tabHandle(2)}>Roles</li>
-                        <li className="list-group-item" onClick={() => tabHandle(3)}>Teams</li>
-                        <li className="list-group-item" onClick={() => tabHandle(4)}>Users</li>
-                        <li className="list-group-item" onClick={() => tabHandle(5)}>WhatsApp Support Account</li>
+                        <li className="list-group-item" onClick={() => tabHandle(1)}>Roles</li>
+                        <li className="list-group-item" onClick={() => tabHandle(2)}>User</li>
+                        <li className="list-group-item" onClick={() => tabHandle(3)}>Desgination Heiarchy</li>
+                        <li className="list-group-item" onClick={() => tabHandle(4)}>Password Policy</li>
+                        <li className="list-group-item" onClick={() => tabHandle(5)}>Calender</li>
+                        <li className="list-group-item" onClick={() => tabHandle(6)}>Property Showing</li>
+                        <li className="list-group-item" onClick={() => tabHandle(7)}>Property Finalization</li>
+                        <li className="list-group-item" onClick={() => tabHandle(8)}>Type Of Business</li>
                     </ul>
                 </div>
                 <div className="col-10">
@@ -68,10 +71,10 @@ const tabHandle = (num)=>{
                     <div className={tab === 5 ? "d-block" : "d-none"}>
                         <PropertyShowing />
                     </div>
-                    <div className={tab === 5 ? "d-block" : "d-none"}>
+                    <div className={tab === 6 ? "d-block" : "d-none"}>
                         <PropertyFinal />
                     </div>
-                    <div className={tab === 5 ? "d-block" : "d-none"}>
+                    <div className={tab === 7 ? "d-block" : "d-none"}>
                         <BusninessOf />
                     </div>
                 </div>

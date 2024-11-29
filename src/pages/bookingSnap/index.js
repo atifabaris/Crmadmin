@@ -1,5 +1,5 @@
 import React from "react";
-import PSMunit from "../../components/rems-status/PSMunit";
+import PSMunit from "../../components/rems-status/psmunit";
 import CheckBooking from "../../components/rems-status/CheckBooking";
 import FilterShort from "../../components/rems-status/FilterShort";
 import BookingTab from "../../components/rems-status/Bookingtab";

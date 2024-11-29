@@ -5,7 +5,7 @@ function Role() {
     <div className='card'>
     <div className='table-responsive active-projects style-1'>
         <h2 className='tbl-caption text-light'> Role List
-        <Link className="btn btn-primary btn-sm"  to="/reminderlist" role="button" aria-controls="offcanvasExample">
+        <Link className="btn btn-primary btn-sm"  to="/" role="button" aria-controls="offcanvasExample">
         + Role Added</Link></h2>
  {/* <button type="button" className="btn btn-secondary btn-sm" > + Invite Employee
                                 </button> */}
