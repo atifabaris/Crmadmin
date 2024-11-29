@@ -146,6 +146,8 @@ import NewSMS from "./components/add-onsmain/new-sms";
 import NewAppRegistration from "./components/add-onsmain/new-app-registration";
 import Registration from "./components/add-onsmain/registration-list";
 import ModuleCustomization from "./pages/moduleCustomization/modulecustomization";
+import SalesProcess from "./pages/salesProcess";
+import TrendView from "./components/trendView/TrendView";
 
 
 //---------------------JUNAID IMPORT END --------------------------
@@ -343,6 +345,21 @@ function App() {
               
               <Route path="*" element={<PageNotFound />} />
 
+
+              {/*-------------- meraj route start ----------------------*/}
+
+              <Route path="view-agent" element={<ViewAgent />} />
+              <Route path="create-agent" element={<CreateAgent />} />
+              <Route path="view-brokers" element={<ViewBrokers />} />
+              <Route path="create-brokers" element={<CreateBrokers />} />
+              {/* setting */}
+              <Route path="third-party-apps" element={<ThirdPartyApps />} />
+              <Route path="sales-process" element={<SalesProcess />} />
+              <Route path="tracker-settings" element={<TrackerSettings />} />
+              <Route path="plan-details" element={<PlanDetails />} />
+              <Route mpath="plan-details-upgrade" element={<PlanDetailUpgrade />}/>
+              <Route path="data-management" element={<DataManagement />} />
+
               {/* Advanced Settings */}
               <Route path="company-setting-main" element={<CompanyuSettingMian />} />
               <Route path="company-information" element={<CompanyInformationForm />} />
@@ -361,10 +378,16 @@ function App() {
               <Route path="communication-templates" element={<CommunicationTemplates />} />
               <Route path="email-templates" element={<EmailTemplates />} />
               <Route path="edit-email-templates" element={<EditEmailTemplates />} />
+
+              {/* Trend View */}
+              <Route path="trend-view" element={<TrendView />} />
+              
+
+              {/*-------------- meraj route End ----------------------*/}
               
              {/* Adil start here */ }
              <Route path="tenant" element={<Tenant/>} />
-             <Route path="newTenant" element={<NewTenantform/>} />
+             <Route path="newTenant" element={<NewTenantform/>}  />
              <Route path="selfService" element={<SelfService/>} />
              <Route path="usermanagement" element={<UserManagement/>} />
              <Route path="usermanagment/mainprofile" element={<MainProfile/>} />
