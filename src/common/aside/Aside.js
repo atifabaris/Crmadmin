@@ -9,8 +9,11 @@ import { useDispatch } from "react-redux";
 import { setIsLogin } from "../../slice/auth";
 import { getLength, getMenusdata } from "../../api/login/Login";
 import { navigationData } from "./navigationData/NavigationData";
-
+ import {staticMenus} from "./data"
 let asideMenu = [];
+
+
+
 
 function Aside({ showAsideBar }) {
   const [selectedMenu, setSelectedMenu] = useState({ parentId: null, childId: null, subSubId: null });
@@ -69,8 +72,7 @@ function Aside({ showAsideBar }) {
   const getMenusAllData = async () => {
     setLoader(true);
     try {
-      const menusRes = await getMenusdata();
-      setMainMenus(menusRes?.data);
+      setMainMenus(staticMenus.data);
       setLoader(false);
     } catch (error) {
       alert(error?.message);
@@ -88,7 +90,7 @@ function Aside({ showAsideBar }) {
       <div className="deznav-scroll d-flex flex-column justify-content-between h-100">
         <ul className="metismenu mm-show flex-1" id="menu">
           <li className={`mm-active hideDarrow ${!showAsideBar ? "hide" : ""}`}>
-            <Link className="" to={mainMenus?.dashboard?.frontRoute} aria-expanded="false">
+            <Link className="" to={"/dashboard"} aria-expanded="false">
               <span className="menu-icon">
                 <MdDashboard />
               </span>
@@ -98,7 +100,7 @@ function Aside({ showAsideBar }) {
 
           {mainMenus ? (
             <>
-              {mainMenus?.role?.map((item, i) => (
+              {mainMenus.role?.map((item, i) => (
                 <li
                   className={`mm-active ${!showAsideBar ? "hide" : ""} ${selectedMenu.parentId === item.uniqueId ? "active" : ""}`}
                   onClick={() => menuClicked(item.uniqueId)}
